@@ -1,6 +1,6 @@
 {
     "name": "stg/theme-bundle",
-    "type": "bundle",
+    "type": "library",
     "description": "Bundle de Symfony",
     "keywords": [
         "bundle",
@@ -29,14 +29,14 @@
         "php": ">=5.3.2"
     },
     "autoload": {
-        "psr-0": { "STG\\ThemeBundle\\": "src/STG/ThemeBundle" }
+        "psr-0": { "ThemeBundle\\": "STG/" }
     },
     "config": {
         "bin-dir": "bin"
     },
     "extra": {
         "branch-alias": {
-            "dev": "*"
+            "master": "*"
         }
     }
 }
