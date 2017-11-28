@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Aplicación con stgtheme</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+          integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+    <!-- css custom theme -->
+    <link rel="stylesheet" href="{{ asset('bundles/stgtheme/css/custom.css') }}" type="text/css">
+
+    <!-- assets fonts -->
+    <link rel="stylesheet" href="/assets/standard/css/fonts.css" type="text/css">
+
+    <style>
+
+        .cover {
+            height: 360px;
+            background-image: url('{{ asset('bundles/stgtheme/img/bootstrap-top.jpg') }}');
+            background-size: 100% auto;
+            background-repeat: no-repeat;
+        }
+
+        .row-top {
+            padding-top: 80px;
+        }
+
+        .fixed-top {
+            background-repeat: repeat-x;
+            background-image: url("https://www.santafe.gob.ar/assets/standard/images/barra-header.png");
+            background-position: left bottom;
+            background-repeat: repeat-x;
+            background-size: 1367px 3px;
+            background-color: #e3e1e2;
+        }
+
+        .sociales {
+            padding:15px;
+        }
+
+        .marca {
+            padding:15px;
+        }
+
+
+
+    </style>
+
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-md navbar-light fixed-top">
+    <a class="navbar-brand" href="#"><img src="/assets/standard/images/gob-santafe.png"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+        </ul>
+        <form class="form-inline mt-2 mt-md-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Buscar" aria-label="Search">
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>
+        </form>
+    </div>
+</nav>
+
+
+<main role="main" class="container">
+
+
+    <div class="row row-top">
+
+        <div class="col-lg-12">
+            <h1>Titulo de la aplicacion</h1>
+
+            <p>Secretaría de tecnologías para la gestión. Miniterio de Gobierno y Reforma del Estado</p>
+
+            <div class="cover">
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="row">
+        <nav aria-label="breadcrumb" role="navigation">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Library</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Data</li>
+            </ol>
+        </nav>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 col-md-6">
+
+            <form>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail4">Email</label>
+                        <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputPassword4">Password</label>
+                        <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputAddress">Address</label>
+                    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                </div>
+                <div class="form-group">
+                    <label for="inputAddress2">Address 2</label>
+                    <input type="text" class="form-control" id="inputAddress2"
+                           placeholder="Apartment, studio, or floor">
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputCity">City</label>
+                        <input type="text" class="form-control" id="inputCity">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputState">State</label>
+                        <select id="inputState" class="form-control">
+                            <option selected>Choose...</option>
+                            <option>...</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="inputZip">Zip</label>
+                        <input type="text" class="form-control" id="inputZip">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="checkbox"> Check me out
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <button type="submit" class="btn btn-primary">Aceptar</button>
+                </div>
+
+
+            </form>
+
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+        <p class="float-right">
+            <a href="#">Arriba</a>
+        </p>
+        </div>
+    </div>
+
+
+</main>
+
+
+<div class="clearfix"><br></div>
+
+<footer class="text-muted">
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-md-7">
+                <div class="sociales">
+                    <p><a href="/index.php/web/content/view/full/117678">RSS / SUSCRIPCIÓN A NOTICIAS</a></p>
+                    <ul class="list-inline footer-ul">
+                        <li class="list-inline-item"><a target="_blank" href="http://www.twitter.com/GobSantaFe"><i
+                                        class="icon-footertwitter"></i></a></li>
+                        <li class="list-inline-item"><a target="_blank" href="http://www.facebook.com/GobSantaFe"><i
+                                        class="icon-footerfacebook"></i></a>
+                        </li>
+                        <li class="list-inline-item"><a target="_blank" href="http://gplus.to/GobSantaFe"><i
+                                        class="icon-footerg"></i></a></li>
+                        <li class="list-inline-item"><a target="_blank" href="http://gobsantafe.tumblr.com/"><i
+                                        class="icon-footertumblr"></i></a>
+                        </li>
+                        <li class="list-inline-item"><a target="_blank" href="http://www.youtube.com/GobSantaFe"><i
+                                        class="icon-footeryoutube"></i></a></li>
+                        <li class="list-inline-item"><a target="_blank" href="http://instagram.com/gobsantafe"><i
+                                        class="icon-footerinstagram"></i></a></li>
+                        <li class="list-inline-item"><a target="_blank" href="https://es.foursquare.com/gobsantafe"><i
+                                        class="icon-footerfoursquare"></i></a></li>
+                        <li class="list-inline-item"><a target="_blank" href="https://storify.com/GobSantaFe"><i
+                                        class="icon-footerstorify"></i></a>
+                        </li>
+                        <li class="list-inline-item"><a target="_blank"
+                                                        href="http://www.linkedin.com/company/gobierno-de-la-provincia-de-santa-fe"><i
+                                        class="icon-footerlinkedin"></i></a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="col-md-5">
+
+                <div class="marca">
+                    <img src="https://www.santafe.gob.ar/assets/app/portal/imgs/marca-footer.png" alt="Santa Fe">
+                    <p>Atención telefónica: 0800-777-0801 </p>
+                    <p>Lunes a viernes de 8 a 18 hs </p>
+                    <p><span class="cc">c</span> Atribución-CompartirIgual 2.5 Argentina</p>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+        integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+        integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+</body>
+</html>
