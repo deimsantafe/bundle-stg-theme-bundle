@@ -1,0 +1,42 @@
+{
+    "name": "stg/theme-bundle",
+    "type": "bundle",
+    "description": "Bundle de Symfony",
+    "keywords": [
+        "bundle",
+        "bootstrap",
+        "Symfony",
+        "php",
+        "theme"
+    ],
+    "homepage": "https://www.santafe.gob.ar",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lucas Aguilar",
+            "email": "lucasaguilar@gmail.com"
+        },
+        {
+            "name": "Fernando Pradolini",
+            "email": "fernandopradolini@gmail.com"
+        }
+    ],
+    "support": {
+        "email": "lucasaguilar@gmail.com",
+        "wiki": "https://github.com/deimsantafe/bundle-stg-theme-bundle/wiki"
+    },
+    "require": {
+        "php": ">=5.3.2"
+    },
+    "autoload": {
+        "psr-0": { "STG\\ThemeBundle\\": "src/STG/ThemeBundle" }
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev": "*"
+        }
+    }
+}
