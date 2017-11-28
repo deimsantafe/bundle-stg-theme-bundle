@@ -1,6 +1,6 @@
 {
     "name": "stg/theme-bundle",
-    "type": "bundle",
+    "type": "library",
     "description": "Bundle de Symfony",
     "keywords": [
         "bundle",
