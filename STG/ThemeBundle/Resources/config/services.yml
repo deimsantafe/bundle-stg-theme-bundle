@@ -1,4 +1,0 @@
-services:
-#    stg_theme.example:
-#        class: STG\ThemeBundle\Example
-#        arguments: ["@service_id", "plain_value", "%parameter%"]
