@@ -1,3 +1,7 @@
+parameters:
+    title: 'Titulo de la aplicación'
+    entity: 'Organismo que desarrolla'
+
 services:
 #    stg_theme.example:
 #        class: STG\ThemeBundle\Example
