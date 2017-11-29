@@ -16,7 +16,7 @@ class Configuration implements ConfigurationInterface
 
         $rootNode->children()->arrayNode('datosEncabezado')->isRequired()->info(
             'Complete los parametros del encabezado'
-        )->children()->scalarNode('title')->end()->scalarNode('entity')->end;
+        )->children()->scalarNode('title')->end()->scalarNode('entity')->end();
 
         return $treeBuilder;
 
