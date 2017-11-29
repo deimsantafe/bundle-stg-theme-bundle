@@ -27,8 +27,8 @@ class STGThemeExtension extends Extension
             $config['title'] = 'Organismo que expone el servicio';
         }
 
-        $container->setParameter('title', $config['title']);
-        $container->setParameter('entity', $config['entity']);
+        $container->setParameter('stg_theme.datos_encabezado.title', $config['title']);
+        $container->setParameter('stg_theme.datos_encabezado.entity', $config['entity']);
 
     }
 

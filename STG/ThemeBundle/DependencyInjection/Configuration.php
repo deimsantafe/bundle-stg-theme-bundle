@@ -14,7 +14,7 @@ class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('stg_theme');
 
-        $rootNode->children()->arrayNode('datosEncabezado')->isRequired()->info(
+        $rootNode->children()->arrayNode('datos_encabezado')->isRequired()->info(
             'Complete los parametros del encabezado'
         )->children()->scalarNode('title')->end()->scalarNode('entity')->end();
 
