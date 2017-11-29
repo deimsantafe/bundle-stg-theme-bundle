@@ -24,8 +24,8 @@ class STGThemeExtension extends Extension
             $config['title'] = 'Titulo de la aplicación';
         }
 
-        if (!isset($config['Entity'])) {
-            $config['title'] = 'Organismo que expone el servicio';
+        if (!isset($config['entity'])) {
+            $config['entity'] = 'Organismo que expone el servicio';
         }
 
         $container->setParameter('stg_theme.datos_encabezado.title', $config['title']);
