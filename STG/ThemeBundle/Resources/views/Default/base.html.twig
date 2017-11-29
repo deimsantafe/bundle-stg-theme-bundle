@@ -22,7 +22,7 @@
     {% endblock %}
 
 
-    {% block css-intranet %}
+    {% block cssIntranet %}
 
     {# preparado para cargar los assets de la intranet de gobierno para sitios sin conexion a internet #}
     {#{% include 'STGThemeBundle:Default:cdnIntranet.html.twig' %}#}
@@ -76,7 +76,7 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
 
-            {% block nav-items %}
+            {% block navItems %}
             <li class="nav-item active">
                 <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
@@ -120,7 +120,7 @@
     <div class="row">
         <nav aria-label="breadcrumb" role="navigation">
             <ol class="breadcrumb">
-                {% block breadcrumb-items %}
+                {% block breadcrumbItems %}
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
                 <li class="breadcrumb-item"><a href="#">Library</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Data</li>
@@ -191,7 +191,7 @@
         </div>
     </div>
 
-    {% block back-to-top %}
+    {% block backTop %}
     <div class="row">
         <div class="col-12">
             <p class="float-right">
@@ -260,7 +260,7 @@
     </footer>
 {% endblock %}
 
-{% block cdn-js %}
+{% block cdnJs %}
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -275,7 +275,7 @@
 
 {% endblock %}
 
-{% block cdn-js-intranet %}
+{% block cdnJsIntranet %}
 
 {# incluir archivos desde la intranet#}
 
