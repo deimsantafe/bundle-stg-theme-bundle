@@ -1,6 +1,6 @@
 parameters:
-#
-#
+    title: 'Titulo de la aplicación seteado desde services.yml del bundle'
+    entity: 'Organismo de la aplicacion seteado desde services.yml del bundle'
 
 services:
 #    stg_theme.example:
