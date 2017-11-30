@@ -20,11 +20,11 @@ class STGThemeExtension extends Extension
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
 
-        if (!isset($config['title'])) {
+        if (!isset($config['title'] ) or ($config['title'] == null) ) {
             $config['title'] = 'Titulo de la aplicación';
         }
 
-        if (!isset($config['entity'])) {
+        if (!isset($config['entity']) or ($config['entity'] == null )) {
             $config['entity'] = 'Organismo que expone el servicio';
         }
 
