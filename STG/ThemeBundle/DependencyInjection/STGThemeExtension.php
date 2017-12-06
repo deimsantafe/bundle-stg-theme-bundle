@@ -20,8 +20,8 @@ class STGThemeExtension extends Extension
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
-        $def = $container->getDefinition('stg.theme.configuration.service');
-        $def->replaceArgument(0, $config['configuration']['offline']);
+        //$def = $container->getDefinition('stg.theme.configuration.service');
+        //$def->replaceArgument(0, $config['configuration']['offline']);
 
     }
 
