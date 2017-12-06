@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>{{ datos_encabezado_title }}</title>
+    <title>{{ datos_encabezado_title | default('Titulo de la aplicación') }}</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -106,9 +106,9 @@
     <div class="row row-top">
 
         <div class="col-lg-12">
-            <h1>{{ datos_encabezado_title }}</h1>
+            <h1>{{ datos_encabezado_title | default('Titulo de la aplicación') }}</h1>
 
-            <p>{{ datos_encabezado_entity }}</p>
+            <p>{{ datos_encabezado_entity | default('Organismo o dependencia')}}</p>
 
             <div class="cover">
             </div>
