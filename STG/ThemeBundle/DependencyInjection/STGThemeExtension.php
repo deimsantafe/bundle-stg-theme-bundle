@@ -13,23 +13,15 @@ class STGThemeExtension extends Extension
 
     public function load(array $configs, ContainerBuilder $container)
     {
-        // TODO: Implement load() method.
-        $configuration = new Configuration();
-        $config = $this->processConfiguration($configuration, $configs);
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
 
-        if (!isset($config['title'] ) or ($config['title'] == null) ) {
-            $config['title'] = 'Titulo de la aplicación';
-        }
+        $configuration = new Configuration();
+        $config = $this->processConfiguration($configuration, $configs);
 
-        if (!isset($config['entity']) or ($config['entity'] == null )) {
-            $config['entity'] = 'Organismo que expone el servicio';
-        }
-
-        $container->setParameter('stg_theme.datos_encabezado.title', $config['title']);
-        $container->setParameter('stg_theme.datos_encabezado.entity', $config['entity']);
+        $def = $container->getDefinition('stg.theme.configuration.service');
+        $def->replaceArgument(0, $config['configuration']['offline']);
 
     }
 
