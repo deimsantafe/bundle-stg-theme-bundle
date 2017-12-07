@@ -21,7 +21,7 @@ Para utilizar este bundle/paquete agregar en el composer.json de tu proyecto lo 
 Luego ejecutar: 
 
 ```bash
-php composer.phar require stg/theme-bundle:*
+php composer.phar require stgbundle/theme-bundle:*
 ```
 Luego van a poder utilizar el código gestionado via composer e incluido en el autoloader en su aplicación.
 
@@ -49,5 +49,16 @@ stg_theme:
 - Y para visualizar un demo de la plantilla base del tema, ejecutar la siguiente url:
 
 /web/app_dev.php/stgtheme/
+
+- config.yml de tu aplicación, agregar los siguientes parametros:
+
+```yml
+
+stg_theme:
+    configuration:
+        offline:
+
+```
+
 
 - bla bla bla...(en construcción)
