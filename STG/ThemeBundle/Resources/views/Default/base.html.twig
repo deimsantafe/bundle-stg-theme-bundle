@@ -29,6 +29,16 @@
 
     {% endblock %}
 
+    {% if offline == true %}
+
+        <span>Modo Offline en true: {{ offline }}</span>
+
+    {% else %}
+
+        <span>Modo Offline en false: {{ offline }}</span>
+
+    {% endif %}
+
 
     <style>
 
