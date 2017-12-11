@@ -22,7 +22,7 @@ class STGThemeExtension extends Extension
 
         $config['configuration']['offline'] = true;
 
-        $container->setParameter('offline', $config['configuration']['offline']);
+        $container->setParameter('configuration_offline', $config['configuration']['offline']);
 
     }
 
