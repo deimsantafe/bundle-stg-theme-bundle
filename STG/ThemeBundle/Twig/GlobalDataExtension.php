@@ -17,7 +17,7 @@ class GlobalDataExtension extends \Twig_Extension
     public function getGlobals()
     {
         return array(
-            'configuration_offline' => $this->container->getParameter('configuration_offline'),
+            'configuration_offline' => $this->container->getParameter('stg_theme.configuration.offline'),
         );
     }
 
