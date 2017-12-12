@@ -6,8 +6,8 @@ services:
 #        class: STG\ThemeBundle\Example
 #        arguments: ["@service_id", "plain_value", "%parameter%"]
 
-    stg.deim.themes.aplicativo.twig.global_data_extension:
-        class: STG\ThemeBundle\Twig\GlobalDataExtension
+    stgtheme.twig_extension:
+        class: STG\ThemeBundle\Twig\STGThemeExtension
         arguments: [@service_container]
         tags:
             - { name: twig.extension }

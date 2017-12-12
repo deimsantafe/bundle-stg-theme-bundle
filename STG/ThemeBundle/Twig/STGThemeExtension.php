@@ -5,7 +5,7 @@ namespace STG\ThemeBundle\Twig;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 
-class GlobalDataExtension extends \Twig_Extension
+class STGThemeExtension extends \Twig_Extension
 {
     protected $container;
 
@@ -23,6 +23,6 @@ class GlobalDataExtension extends \Twig_Extension
 
     public function getName()
     {
-        return 'global_data_extension';
+        return 'stg_theme_extension';
     }
 }
