@@ -10,15 +10,15 @@
 
         {% if configuration_offline == true %}
 
-            {# assets locales #}
+            {# asset locales #}
 
             <!-- Bootstrap CSS -->
             <link rel="stylesheet"
-                  href="{{ assets('bundles/stgtheme/assets/bootstrap/bootstrap-4.0.0-beta.2/css/bootstrap.min.css') }}"
+                  href="{{ asset('bundles/stgtheme/assets/bootstrap/bootstrap-4.0.0-beta.2/css/bootstrap.min.css') }}"
                   type="text/css">
 
             <!-- css custom theme -->
-            <link rel="stylesheet" href="{{ assets('bundles/stgtheme/css/custom.css') }}" type="text/css">
+            <link rel="stylesheet" href="{{ asset('bundles/stgtheme/css/custom.css') }}" type="text/css">
 
             <!-- assets fonts -->
             <link rel="stylesheet" href="/assets/standard/css/fonts.css" type="text/css">
@@ -281,11 +281,11 @@
 
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
-        <script src="{{ assets('bundles/stgtheme/assets/jquery/jquery-3.2.1.slim/jquery-3.2.1.slim.min.js') }}"></script>
+        <script src="{{ asset('bundles/stgtheme/assets/jquery/jquery-3.2.1.slim/jquery-3.2.1.slim.min.js') }}"></script>
 
-        <script src="{{ assets('bundles/stgtheme/assets/popper.js/1.12.3/umd/popper.min.js') }}"></script>
+        <script src="{{ asset('bundles/stgtheme/assets/popper.js/1.12.3/umd/popper.min.js') }}"></script>
 
-        <script src="{{ assets('bundles/stgtheme/assets/bootstrap/bootstrap-4.0.0-beta.2/js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('bundles/stgtheme/assets/bootstrap/bootstrap-4.0.0-beta.2/js/bootstrap.min.js') }}"></script>
 
     {% else %}
 
