@@ -8,36 +8,41 @@
 
     {% block css %}
 
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
-              integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
-              crossorigin="anonymous">
+        {% if configuration_offline == true %}
 
-        <!-- css custom theme -->
-        <link rel="stylesheet" href="{{ asset('bundles/stgtheme/css/custom.css') }}" type="text/css">
+            {# assets locales #}
 
-        <!-- assets fonts -->
-        <link rel="stylesheet" href="/assets/standard/css/fonts.css" type="text/css">
+            <!-- Bootstrap CSS -->
+            <link rel="stylesheet"
+                  href="{{ asset('bundles/stgtheme/assets/bootstrap/bootstrap-4.0.0-beta.2/css/bootstrap.min.css') }}"
+                  type="text/css">
+
+            <!-- css custom theme -->
+            <link rel="stylesheet" href="{{ asset('bundles/stgtheme/css/custom.css') }}" type="text/css">
+
+            <!-- assets fonts -->
+            <link rel="stylesheet" href="/assets/standard/css/fonts.css" type="text/css">
+
+        {% else %}
+
+            {# assets con cdn externos #}
+
+            <!-- Bootstrap CSS -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+                  integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+                  crossorigin="anonymous">
+
+            <!-- css custom theme -->
+            <link rel="stylesheet" href="{{ asset('bundles/stgtheme/css/custom.css') }}" type="text/css">
+
+            <!-- assets fonts -->
+            <link rel="stylesheet" href="/assets/standard/css/fonts.css" type="text/css">
+
+        {% endif %}
+
 
     {% endblock %}
 
-
-    {% block cssIntranet %}
-
-    {# preparado para cargar los assets de la intranet de gobierno para sitios sin conexion a internet #}
-    {#{% include 'STGThemeBundle:Default:cdnIntranet.html.twig' %}#}
-
-    {% endblock %}
-
-    {% if configuration_offline == true %}
-
-        <span>Modo Offline en true: {{ configuration_offline }}</span>
-
-    {% else %}
-
-        <span>Modo Offline en false: {{ configuration_offline }}</span>
-
-    {% endif %}
 
     <style>
 
@@ -76,142 +81,143 @@
 <body>
 
 {% block nav %}
-<nav class="navbar navbar-expand-md navbar-light fixed-top">
-    <a class="navbar-brand" href="#"><img src="https://www.santafe.gob.ar/assets/standard/images/gob-santafe.png"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto">
+    <nav class="navbar navbar-expand-md navbar-light fixed-top">
+        <a class="navbar-brand" href="#"><img
+                    src="https://www.santafe.gob.ar/assets/standard/images/gob-santafe.png"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
 
-            {% block navItems %}
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
-            {% endblock %}
+                {% block navItems %}
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#">Disabled</a>
+                    </li>
+                {% endblock %}
 
-        </ul>
+            </ul>
 
-        <form class="form-inline mt-2 mt-md-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Buscar" aria-label="Search">
-            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>
-        </form>
+            <form class="form-inline mt-2 mt-md-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Buscar" aria-label="Search">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>
+            </form>
 
-    </div>
-</nav>
+        </div>
+    </nav>
 {% endblock %}
 
 {% block main %}
-<main role="main" class="container">
+    <main role="main" class="container">
 
 
-    <div class="row row-top">
+        <div class="row row-top">
 
-        <div class="col-lg-12">
-            <h1>{{ datos_encabezado_title | default('Titulo de la aplicación') }}</h1>
+            <div class="col-lg-12">
+                <h1>{{ datos_encabezado_title | default('Titulo de la aplicación') }}</h1>
 
-            <p>{{ datos_encabezado_entity | default('Organismo o dependencia')}}</p>
+                <p>{{ datos_encabezado_entity | default('Organismo o dependencia') }}</p>
 
-            <div class="cover">
+                <div class="cover">
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="row">
+            <nav aria-label="breadcrumb" role="navigation">
+                <ol class="breadcrumb">
+                    {% block breadcrumbItems %}
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item"><a href="#">Library</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Data</li>
+                    {% endblock %}
+                </ol>
+            </nav>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12 col-md-6">
+
+                {% block content %}
+
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputEmail4">Email</label>
+                                <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputPassword4">Password</label>
+                                <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputAddress">Address</label>
+                            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputAddress2">Address 2</label>
+                            <input type="text" class="form-control" id="inputAddress2"
+                                   placeholder="Apartment, studio, or floor">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputCity">City</label>
+                                <input type="text" class="form-control" id="inputCity">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="inputState">State</label>
+                                <select id="inputState" class="form-control">
+                                    <option selected>Choose...</option>
+                                    <option>...</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-2">
+                                <label for="inputZip">Zip</label>
+                                <input type="text" class="form-control" id="inputZip">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox"> Check me out
+                                </label>
+                            </div>
+                        </div>
+
+                        <div>
+                            <button type="submit" class="btn btn-primary">Aceptar</button>
+                        </div>
+
+
+                    </form>
+
+                {% endblock %}
+
             </div>
         </div>
 
-    </div>
+        {% block backTop %}
+            <div class="row">
+                <div class="col-12">
+                    <p class="float-right">
+                        <a href="#">Arriba</a>
+                    </p>
+                </div>
+            </div>
+        {% endblock %}
 
 
-    <div class="row">
-        <nav aria-label="breadcrumb" role="navigation">
-            <ol class="breadcrumb">
-                {% block breadcrumbItems %}
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item"><a href="#">Library</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Data</li>
-                {% endblock %}
-            </ol>
-        </nav>
-    </div>
-
-    <div class="row">
-        <div class="col-lg-12 col-md-6">
-
-            {% block content %}
-
-                <form>
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="inputEmail4">Email</label>
-                            <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="inputPassword4">Password</label>
-                            <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputAddress">Address</label>
-                        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-                    </div>
-                    <div class="form-group">
-                        <label for="inputAddress2">Address 2</label>
-                        <input type="text" class="form-control" id="inputAddress2"
-                               placeholder="Apartment, studio, or floor">
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="inputCity">City</label>
-                            <input type="text" class="form-control" id="inputCity">
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label for="inputState">State</label>
-                            <select id="inputState" class="form-control">
-                                <option selected>Choose...</option>
-                                <option>...</option>
-                            </select>
-                        </div>
-                        <div class="form-group col-md-2">
-                            <label for="inputZip">Zip</label>
-                            <input type="text" class="form-control" id="inputZip">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="checkbox"> Check me out
-                            </label>
-                        </div>
-                    </div>
-
-                    <div>
-                        <button type="submit" class="btn btn-primary">Aceptar</button>
-                    </div>
-
-
-                </form>
-
-            {% endblock %}
-
-        </div>
-    </div>
-
-    {% block backTop %}
-    <div class="row">
-        <div class="col-12">
-            <p class="float-right">
-                <a href="#">Arriba</a>
-            </p>
-        </div>
-    </div>
-    {% endblock %}
-
-
-</main>
+    </main>
 {% endblock %}
 
 <div class="clearfix"><br></div>
@@ -269,24 +275,32 @@
     </footer>
 {% endblock %}
 
-{% block cdnJs %}
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
-        integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
-        crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
-        integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
-        crossorigin="anonymous"></script>
+{% block javascript %}
 
-{% endblock %}
+    {% if configuration_offline == true %}
 
-{% block cdnJsIntranet %}
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
-{# incluir archivos desde la intranet#}
+        <script src="{{ asset('bundles/stgtheme/assets/jquery/jquery-3.2.1.slim/jquery-3.2.1.slim.min.js') }}"></script>
+
+        <script src="{{ assets('bundles/stgtheme/assets/popper.js/1.12.3/umd/popper.min.js') }}"></script>
+
+        <script src="{{ asset('bundles/stgtheme/assets/bootstrap/bootstrap-4.0.0-beta.2/js/bootstrap.min.js') }}"></script>
+
+    {% else %}
+
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+                integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+                crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+                integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+                crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+                integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+                crossorigin="anonymous"></script>
+
+    {% endif %}
 
 {% endblock %}
 
