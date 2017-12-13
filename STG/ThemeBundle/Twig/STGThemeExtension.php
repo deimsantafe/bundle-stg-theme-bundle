@@ -5,7 +5,7 @@ namespace STG\ThemeBundle\Twig;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 
-class STGThemeExtension extends \Twig_Extension
+class STGThemeExtension extends \Twig_Extension implements \Twig_Extension_GlobalsInterface
 {
     protected $container;
 
