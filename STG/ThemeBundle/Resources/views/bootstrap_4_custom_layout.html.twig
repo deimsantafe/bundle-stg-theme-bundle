@@ -192,7 +192,6 @@
 {# Rows #}
 
 {% block form_row -%}
-    asas
     <div class="form-group{% if (not compound or force_error|default(false)) and not valid %} has-error{% endif %}">
         {{- form_label(form) -}}
         {{- form_widget(form) -}}
