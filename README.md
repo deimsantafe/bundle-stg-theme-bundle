@@ -46,19 +46,23 @@ stg_theme:
     prefix:   /stgtheme
 ```
 
-- Y para visualizar un demo de la plantilla base del tema, ejecutar la siguiente url:
-
-/web/app_dev.php/stgtheme/
-
 - config.yml de tu aplicación, agregar los siguientes parametros:
 
 ```yml
 
+# Twig Configuration
+twig:    
+    form:
+        resources: ['STGThemeBundle::bootstrap_4_custom_layout.html.twig'] #para renderizar los templates de formularios
+
 stg_theme:
     configuration:
-        offline:
+        offline:  #true o false (Indica si lee los recursos de la intranet o de servidores cdn externos).
 
 ```
 
+- Y para visualizar un demo de la plantilla base del tema, ejecutar la siguiente url:
+
+/web/app_dev.php/stgtheme/
 
 - bla bla bla...(en construcción)
