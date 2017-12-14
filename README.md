@@ -25,9 +25,6 @@ php composer.phar require stgbundle/theme-bundle:*
 ```
 Luego van a poder utilizar el código gestionado via composer e incluido en el autoloader en su aplicación.
 
-Funcionalidad:
-=============
-
 - Una vez instalado, agregar a app/AppKernel.php dentro del array de bundles:
 
 ```php
@@ -60,9 +57,19 @@ stg_theme:
         offline:  #true o false (Indica si lee los recursos de la intranet o de servidores cdn externos).
 
 ```
+Funcionalidad:
+=============
 
-- Y para visualizar un demo de la plantilla base del tema, ejecutar la siguiente url:
+- Para visualizar un demo de la plantilla base del tema, ejecutar la siguiente url:
 
+```
 /web/app_dev.php/stgtheme/
+```
+
+- Extender en su plantilla twig: 
+
+```yml
+{% extends 'STGThemeBundle:Default:base.html.twig' %}
+```
 
 - bla bla bla...(en construcción)
