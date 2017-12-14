@@ -23,6 +23,12 @@ Luego ejecutar:
 ```bash
 php composer.phar require stgbundle/theme-bundle:*
 ```
+Luego instalar los assets
+
+```bash
+php app/console assets:install
+```
+
 Luego van a poder utilizar el código gestionado via composer e incluido en el autoloader en su aplicación.
 
 - Una vez instalado, agregar a app/AppKernel.php dentro del array de bundles:
