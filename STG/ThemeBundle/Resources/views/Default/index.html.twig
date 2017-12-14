@@ -6,15 +6,37 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
-          integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    {% if configuration_offline == true %}
 
-    <!-- css custom theme -->
-    <link rel="stylesheet" href="{{ asset('bundles/stgtheme/css/custom.css') }}" type="text/css">
+        {# asset locales #}
 
-    <!-- assets fonts -->
-    <link rel="stylesheet" href="/assets/standard/css/fonts.css" type="text/css">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet"
+              href="{{ asset('bundles/stgtheme/assets/bootstrap/bootstrap-4.0.0-beta.2/css/bootstrap.min.css') }}"
+              type="text/css">
+
+        <!-- css custom theme -->
+        <link rel="stylesheet" href="{{ asset('bundles/stgtheme/css/custom.css') }}" type="text/css">
+
+        <!-- assets fonts -->
+        <link rel="stylesheet" href="https://www.santafe.gob.ar/assets/standard/css/fonts.css" type="text/css">
+
+    {% else %}
+
+        {# assets con cdn externos #}
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+              integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+              crossorigin="anonymous">
+
+        <!-- css custom theme -->
+        <link rel="stylesheet" href="{{ asset('bundles/stgtheme/css/custom.css') }}" type="text/css">
+
+        <!-- assets fonts -->
+        <link rel="stylesheet" href="https://www.santafe.gob.ar/assets/standard/css/fonts.css" type="text/css">
+
+    {% endif %}
 
     <style>
 
