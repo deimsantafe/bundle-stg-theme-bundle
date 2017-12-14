@@ -16,13 +16,11 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
-                ->arrayNode('datos_encabezado')
+                ->arrayNode('configuration')
                     ->isRequired()
-                    ->info('Complete los parametros del encabezado')
+                    ->info('Complete los parametros requeridos')
                     ->children()
-                        ->scalarNode('title')
-                        ->end()
-                        ->scalarNode('entity')
+                        ->scalarNode('offline')
                         ->end()
             ->end()
                 ->end()
