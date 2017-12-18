@@ -97,6 +97,9 @@ Bloques para utilizar o redefinir:
          {% endblock %}
          
          {% block content %}        
+         
+            {# cotenido principal #}
+         
          {% endblock %}
          
          {% block backTop %}         
