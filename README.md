@@ -93,6 +93,12 @@ Bloques para utilizar o redefinir:
 
 {% block main %}
     
+         {% block cover %}
+         
+            {# con la variable de template "datos_encabezado_imagen" se puede setear una imagen personalizada en este bloque }
+         
+         {% endblock %}
+    
          {% block breadcrumbItems %}                                 
          {% endblock %}
          
@@ -118,6 +124,21 @@ Bloques para utilizar o redefinir:
 {% endblock %}
 
 ```
+
+Variables twig (para reutilizar):
+
+```twig
+
+<title>{{ datos_encabezado_title | default('Titulo de la aplicación') }}</title>
+
+background-image: url('{{ datos_encabezado_imagen |  default(asset('bundles/stgtheme/img/bootstrap-top.jpg')) }}');
+
+<h1>{{ datos_encabezado_title | default('Titulo de la aplicación') }}</h1>
+
+<p>{{ datos_encabezado_entity | default('Organismo o dependencia') }}</p>
+
+```
+
 Dependencias:
 ============
 
