@@ -78,4 +78,47 @@ Funcionalidad:
 {% extends 'STGThemeBundle:Default:base.html.twig' %}
 ```
 
+Bloques para utilizar o redefinir:
+
+```twig
+
+{% block css %}
+    {# contiene los assets de estilos de la plantilla #}
+{% endblock %}
+
+{% block nav %}
+     {% block navItems %}
+     {% endblock %}
+{% endblock %}
+
+{% block main %}
+    
+         {% block breadcrumbItems %}                                 
+         {% endblock %}
+         
+         {% block content %}        
+         {% endblock %}
+         
+         {% block backTop %}         
+         {% endblock %}
+    
+{% endblock %}
+
+{% block footer %}
+
+{% endblock %}
+
+{% block javascript %}
+
+    {# libreras de javascript #}
+
+{% endblock %}
+
+```
+Dependencias:
+============
+
+- Bootstrap 4.
+- Jquery 3.
+
 - bla bla bla...(en construcción)
