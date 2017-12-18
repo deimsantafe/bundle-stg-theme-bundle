@@ -48,7 +48,7 @@
 
         .cover {
             height: 360px;
-            background-image: url('{{ asset('bundles/stgtheme/img/bootstrap-top.jpg') }}');
+            background-image: url('{{ datos_encabezado_imagen |  default(asset('bundles/stgtheme/img/bootstrap-top.jpg')) }}');
             background-size: 100% auto;
             background-repeat: no-repeat;
         }
@@ -125,8 +125,10 @@
 
                 <p>{{ datos_encabezado_entity | default('Organismo o dependencia') }}</p>
 
-                <div class="cover">
-                </div>
+                {% block cover %}
+                    <div class="cover">
+                    </div>
+                {% endblock %}
             </div>
 
         </div>
