@@ -8,6 +8,6 @@ services:
 
     stgtheme.twig_extension:
         class: STG\ThemeBundle\Twig\STGThemeExtension
-        arguments: [@service_container]
+        arguments: ['@service_container']
         tags:
             - { name: twig.extension }
