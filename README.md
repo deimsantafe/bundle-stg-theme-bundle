@@ -147,3 +147,4 @@ Dependencias:
 
 - Bootstrap 4.
 - Jquery 3.
+- Material Icons: https://material.io/icons/ http://google.github.io/material-design-icons/
