@@ -89,13 +89,16 @@ Bloques para utilizar o redefinir:
 {% block nav %}
      {% block navItems %}
      {% endblock %}
+     
+     {% block searchTop %}     
+     {% endblock%}
 {% endblock %}
 
 {% block main %}
     
          {% block cover %}
          
-            {# con la variable de template "datos_encabezado_imagen" se puede setear una imagen personalizada en este bloque }
+            {# con la variable de template "datos_encabezado_imagen" se puede setear una imagen personalizada en este bloque #}
          
          {% endblock %}
     
@@ -144,5 +147,3 @@ Dependencias:
 
 - Bootstrap 4.
 - Jquery 3.
-
-- bla bla bla...(en construcción)
