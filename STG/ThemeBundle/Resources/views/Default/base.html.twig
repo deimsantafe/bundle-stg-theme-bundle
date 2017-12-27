@@ -120,11 +120,12 @@
                 {% endblock %}
 
             </ul>
-
+            {% block searchTop %}
             <form class="form-inline mt-2 mt-md-0">
                 <input class="form-control mr-sm-2" type="text" placeholder="Buscar" aria-label="Search">
                 <button class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>
             </form>
+            {% endblock %}
 
         </div>
     </nav>
@@ -245,7 +246,7 @@
         <div class="container-fluid">
             <div class="row">
 
-                <div class="col-md-4">
+                <div class="offset-md-2 col-md-3">
                     <div class="sociales">
                         <p><a href="/index.php/web/content/view/full/117678">RSS / SUSCRIPCIÓN A NOTICIAS</a></p>
                         <ul class="list-inline footer-ul">
@@ -289,7 +290,7 @@
                 </div>
 
 
-                <div class="col-md-4">
+                <div class="col-md-2">
 
                     <div class="stg-logos-contenedor">
                         <div class="stg-logos">
