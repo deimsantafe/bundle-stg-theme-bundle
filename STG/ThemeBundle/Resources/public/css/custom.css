@@ -5870,3 +5870,6 @@ a.text-dark:focus, a.text-dark:hover {
 
 div.sociales a {
   color: #868e96 !important; }
+
+div.sociales a :hover {
+  opacity: .8; }
