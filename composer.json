@@ -1,7 +1,7 @@
 {
     "name": "stgbundle/theme-bundle",
     "type": "bundle",
-    "description": "Bundle de Symfony",
+    "description": "Bundle de Symfony creado por la Secretaría de Tecnologías para Gestión del Ministerio de Gobierno y Reforma del Estado de la Provincia de Santa Fe",
     "keywords": [
         "bundle",
         "bootstrap",
