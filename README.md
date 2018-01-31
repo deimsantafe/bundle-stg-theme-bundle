@@ -21,7 +21,7 @@ Para utilizar este bundle/paquete agregar en el composer.json de tu proyecto lo 
 Luego ejecutar: 
 
 ```bash
-php composer.phar require stgbundle/theme-bundle:*
+php composer.phar require stgbundle/theme-bundle:1.0-dev
 ```
 Luego instalar los assets
 
