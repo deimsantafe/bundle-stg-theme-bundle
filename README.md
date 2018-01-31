@@ -1,7 +1,9 @@
 # bundle-stg-theme-bundle
 Bundle para Symfony (2.8 a 3.4) para utilizar el bootstrap-theme (tema con todo el framework de bootstrap incluido y con tema personalizado) via composer.
 
-Para utilizar este bundle/paquete agregar en el composer.json de tu proyecto lo siguiente, (ejemplo):
+Para su instalación desde packagist.org: https://packagist.org/packages/stgbundle/theme-bundle
+
+Para utilizar este bundle/paquete directamente agregar en el composer.json de tu proyecto lo siguiente, (ejemplo):
 
 ```json
 "repositories": [
