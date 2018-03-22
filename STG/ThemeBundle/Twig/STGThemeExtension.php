@@ -18,6 +18,7 @@ class STGThemeExtension extends \Twig_Extension implements \Twig_Extension_Globa
     {
         return array(
             'configuration_offline' => $this->container->getParameter('stg_theme.configuration.offline'),
+            'configuration_materialize' => $this->container->getParameter('stg_theme.configuration.materialize')
         );
     }
 
