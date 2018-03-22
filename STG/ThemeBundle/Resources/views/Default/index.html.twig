@@ -17,8 +17,16 @@
               href="{{ asset('bundles/stgtheme/assets/bootstrap/bootstrap-4.0.0-beta.2/css/bootstrap.min.css') }}"
               type="text/css">
 
-        <!-- css custom theme -->
-        <link rel="stylesheet" href="{{ asset('bundles/stgtheme/css/custom.css') }}" type="text/css">
+        {% if configuration_materialize == true %}
+
+            <!-- css custom theme materialize-->
+            <link rel="stylesheet" href="{{ asset('bundles/stgtheme/css/custom-mdb.css') }}" type="text/css">
+
+        {% else %}    
+
+            <!-- css custom theme -->
+            <link rel="stylesheet" href="{{ asset('bundles/stgtheme/css/custom.css') }}" type="text/css">
+        {% endif %}
 
         <!-- assets fonts -->
         <link rel="stylesheet" href="https://www.santafe.gob.ar/assets/standard/css/fonts.css" type="text/css">
@@ -65,8 +73,16 @@
               integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
               crossorigin="anonymous">
 
-        <!-- css custom theme -->
-        <link rel="stylesheet" href="{{ asset('bundles/stgtheme/css/custom.css') }}" type="text/css">
+        {% if configuration_materialize == true %}
+
+            <!-- css custom theme materialize-->
+            <link rel="stylesheet" href="{{ asset('bundles/stgtheme/css/custom-mdb.css') }}" type="text/css">
+
+        {% else %}    
+
+            <!-- css custom theme -->
+            <link rel="stylesheet" href="{{ asset('bundles/stgtheme/css/custom.css') }}" type="text/css">
+        {% endif %}
 
         <!-- assets fonts -->
         <link rel="stylesheet" href="https://www.santafe.gob.ar/assets/standard/css/fonts.css" type="text/css">
@@ -361,6 +377,12 @@
     <script src="{{ asset('bundles/stgtheme/assets/popper.js/1.12.3/umd/popper.min.js') }}"></script>
 
     <script src="{{ asset('bundles/stgtheme/assets/bootstrap/bootstrap-4.0.0-beta.2/js/bootstrap.min.js') }}"></script>
+    
+    {% if configuration_materialize == true %}
+
+        <script src="{{ asset('bundles/stgtheme/assets/mdbootstrap/js/mdb.min.js') }}"></script>
+
+    {% endif %}
 
 {% else %}
 
@@ -374,6 +396,13 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
             integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
             crossorigin="anonymous"></script>
+            
+    {% if configuration_materialize == true %}
+
+        <!-- MDB core JavaScript -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/js/mdb.min.js"></script>        
+
+    {% endif %}          
 
 {% endif %}
 
