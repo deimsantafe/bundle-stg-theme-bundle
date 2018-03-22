@@ -22,6 +22,8 @@ class Configuration implements ConfigurationInterface
                     ->children()
                         ->scalarNode('offline')
                         ->end()
+                        ->scalarNode('materialize')
+                        ->end()    
             ->end()
                 ->end()
                     ->end();

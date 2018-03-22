@@ -63,6 +63,7 @@ twig:
 stg_theme:
     configuration:
         offline:  #true o false (Indica si lee los recursos de la intranet o de servidores cdn externos).
+        materialize: #true o false (Indica si se utiliza el tema de bootstrap con diseño materialize o el de bootstrap original)
 
 ```
 Funcionalidad:
@@ -150,3 +151,4 @@ Dependencias:
 - Bootstrap 4.
 - Jquery 3.
 - Material Icons: https://material.io/icons/ http://google.github.io/material-design-icons/
+- Material Design for Bootstrap 4: https://mdbootstrap.com/
