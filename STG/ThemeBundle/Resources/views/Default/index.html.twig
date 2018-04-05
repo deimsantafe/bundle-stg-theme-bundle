@@ -110,6 +110,12 @@
             height: 60px;
         }
 
+        .footer-ul li > a {
+            color: #f4f4f4;
+            opacity: .5 !important;
+            font-size: 25px !important;
+        }
+
         .cover {
             height: 360px;
             background-image: url('{{ asset('bundles/stgtheme/img/bootstrap-top.jpg') }}');
@@ -132,6 +138,12 @@
 
         .sociales {
             padding: 15px;
+
+        }
+
+        .sociales > p > a {
+            font-weight: 700;
+            font-size: 13px;
         }
 
         .marca {
@@ -150,26 +162,8 @@
             opacity: 0.8;
         }
 
-        @font-face {
-            font-family: Aller;
-            src: url('https://www.santafe.gob.ar/assets/standard/fonts/Aller/Aller_Std_Rg.eot') format('eot'); /* for explorer */
-        }
-
-        @font-face {
-            font-family: Aller;
-            src: url('https://www.santafe.gob.ar/assets/standard/fonts/Aller/Aller_Std_Rg.ttf') format('truetype');
-            /* TTF file for CSS3 browsers */
-        }
-
-        @font-face {
-            font-family: Asap;
-            src: url('https://www.santafe.gob.ar/assets/standard/fonts/Asap/Asap-Regular.ttf') format('truetype');
-            /* TTF file for CSS3 browsers */
-        }
-
         .marca p {
             font-size: 13px !important;
-            font-family: 'Asap' !important;
             font-weight: 400 !important;
             color: #888888 !important;
             line-height: 1 !important;
@@ -181,6 +175,20 @@
             text-decoration: none;
         }
 
+        .custom-icon-middle > li > a > i {
+            vertical-align: middle;
+            padding-top: 3px;
+        }
+
+        .custom-dropdown-menu-right {
+            right: 0;
+            left: auto;
+        }
+
+        .custom-margin-right {
+            margin-right: 10px;
+        }
+
         /**
         *responsive
         */
@@ -188,6 +196,22 @@
             .cover {
                 height: 0px !important;
             }
+
+            .custom-dropdown-menu-right {
+                right: auto;
+                left: 0;
+            }
+
+            .footer-ul li > a {
+                color: #f4f4f4;
+                opacity: .5 !important;
+                font-size: 20px !important;
+            }
+
+            .custom-margin-right {
+                margin-right: auto;
+            }
+
         }
 
 
@@ -215,10 +239,43 @@
                 <a class="nav-link disabled" href="#">Disabled</a>
             </li>
         </ul>
-        <form class="form-inline mt-2 mt-md-0">
+        <form class="form-inline mt-2 mt-md-0 custom-margin-right">
             <input class="form-control mr-sm-2" type="text" placeholder="Buscar" aria-label="Search">
             <button class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>
         </form>
+
+        <ul class="list-inline custom-icon-middle">
+            <li class="list-inline-item dropdown">
+
+                <a href="#" class="dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                   aria-expanded="false" title="Notificaciones"><i class="material-icons">info</i></a>
+
+                <div class="dropdown-menu custom-dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="#">Notificacion 1</a>
+                    <a class="dropdown-item" href="#">Notificacion 2</a>
+                    <a class="dropdown-item" href="#">Otras notificaciones</a>
+                </div>
+
+            </li>
+
+            <li class="list-inline-item">
+
+                <a href="#" class="dropdown-toggle" id="dropdownMenuLinkPerson" data-toggle="dropdown" aria-haspopup="true"
+                   aria-expanded="false"  title="Usuario logeado"><i class="material-icons">person</i></a>
+
+                <div class="dropdown-menu custom-dropdown-menu-right" aria-labelledby="dropdownMenuLinkPerson">
+                    <a class="dropdown-item" href="#">Perfil</a>
+                    <a class="dropdown-item" href="#">Configuración</a>
+                    <a class="dropdown-item" href="#">Acerca de</a>
+                </div>
+
+            </li>
+
+            <li class="list-inline-item"><a href="#" title="Salir"><i class="material-icons">exit_to_app</i></a></li>
+
+        </ul>
+
+
     </div>
 </nav>
 
@@ -252,6 +309,12 @@
 
     <div class="row">
         <div class="col-lg-12 col-md-6">
+
+            <div class="card bg-light mb-12">
+                <div class="card-header">Pantalla actual</div>
+
+
+                <div class="card-body">
 
             <form>
                 <div class="form-row">
@@ -304,6 +367,9 @@
 
 
             </form>
+                </div>
+
+            </div>
 
 
         </div>
@@ -358,7 +424,7 @@
 
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-3">
 
                 <div class="marca">
                     <img src="https://www.santafe.gob.ar/assets/app/portal/imgs/marca-footer.png" alt="Santa Fe">
@@ -370,7 +436,7 @@
 
             </div>
 
-            <div class="col-md-2">
+            <div class="col-md-3">
 
                 <div class="stg-logos-contenedor">
                     <div class="stg-logos">
