@@ -1,5 +1,8 @@
-.row {
-  background-color: #e4e5e6 !important; }
+.container {
+  background: #e4e5e6 !important; }
+
+.container-fluid {
+  background: #e4e5e6 !important; }
 
 div.sociales a {
   color: #868e96 !important; }
