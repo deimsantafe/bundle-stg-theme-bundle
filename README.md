@@ -1,4 +1,6 @@
 # bundle-stg-theme-bundle
+Rama creada con las librerias de http://materializecss.com para dar soporte completo a proyectos que requieran el diseño materialize definido por google.
+
 Bundle para Symfony (2.8 a 3.4) para utilizar el bootstrap-theme (tema con todo el framework de bootstrap incluido y con tema personalizado) via composer.
 
 Para su instalación desde packagist.org: https://packagist.org/packages/stgbundle/theme-bundle
