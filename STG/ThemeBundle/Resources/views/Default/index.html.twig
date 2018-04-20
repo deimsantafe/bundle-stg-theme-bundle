@@ -11,8 +11,7 @@
     {% if configuration_offline == true %}
 
         {# asset locales #}
-        <!-- Compiled and minified CSS -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+        <link rel="stylesheet" href="{{ asset('bundles/stgtheme/css/custom-materialize.css') }}">
 
         <!-- assets fonts -->
         <link rel="stylesheet" href="https://www.santafe.gob.ar/assets/standard/css/fonts.css" type="text/css">
@@ -56,9 +55,7 @@
     {% else %}
 
         {# assets con cdn externos #}
-
-        <!-- Compiled and minified CSS -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+        <link rel="stylesheet" href="{{ asset('bundles/stgtheme/css/custom-materialize.css') }}">
 
         <!-- assets fonts -->
         <link rel="stylesheet" href="https://www.santafe.gob.ar/assets/standard/css/fonts.css" type="text/css">
