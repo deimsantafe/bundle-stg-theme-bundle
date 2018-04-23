@@ -11,9 +11,10 @@
     {% if configuration_offline == true %}
 
         {# asset locales #}
-        {#<link rel="stylesheet" href="{{ asset('bundles/stgtheme/css/custom-materialize.css') }}">#}
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+        <link rel="stylesheet" href="{{ asset('bundles/stgtheme/css/custom-materialize.css') }}">
 
+        <!-- Compiled and minified CSS -->
+        {#<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">#}
 
         <!-- assets fonts -->
         <link rel="stylesheet" href="https://www.santafe.gob.ar/assets/standard/css/fonts.css" type="text/css">
@@ -57,8 +58,8 @@
     {% else %}
 
         {# assets con cdn externos #}
-        {#<link rel="stylesheet" href="{{ asset('bundles/stgtheme/css/custom-materialize.css') }}">#}
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+        <link rel="stylesheet" href="{{ asset('bundles/stgtheme/css/custom-materialize.css') }}">
+        {#<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">#}
 
         <!-- assets fonts -->
         <link rel="stylesheet" href="https://www.santafe.gob.ar/assets/standard/css/fonts.css" type="text/css">
@@ -219,23 +220,31 @@
 
 
 <div class="navbar-fixed">
-    <!-- Dropdown Structure -->
     <ul id="dropdown1" class="dropdown-content">
         <li><a href="#!">one</a></li>
         <li><a href="#!">two</a></li>
         <li class="divider"></li>
         <li><a href="#!">three</a></li>
     </ul>
-    <nav>
+    <nav class="fixed-top">
         <div class="nav-wrapper">
-            <a class="brand-logo" href="#"><img src="https://www.santafe.gob.ar/assets/standard/images/gob-santafe.png"></a>
+            <a href="https://www.santafe.gob.ar" class="brand-logo"><img src="/assets/standard/images/gob-santafe.png"></a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="sass.html">Sass</a></li>
                 <li><a href="badges.html">Components</a></li>
                 <!-- Dropdown Trigger -->
-                <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i
-                                class="material-icons right">arrow_drop_down</i></a></li>
+                <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
             </ul>
+
+
+            <ul id="slide-out" class="side-nav">
+                <li><a href="#!">First Sidebar Link</a></li>
+                <li><a href="#!">Second Sidebar Link</a></li>
+            </ul>
+            <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+
+
+
         </div>
     </nav>
 </div>
@@ -257,20 +266,8 @@
 
     </div>
 
-    {#
-    <div class="row">
-        <nav aria-label="breadcrumb" role="navigation">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item"><a href="#">Library</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Data</li>
-            </ol>
-        </nav>
-    </div>
-    #}
 
     <div class="row">
-
     <nav>
         <div class="nav-wrapper">
             <div class="col s12">
@@ -283,67 +280,68 @@
 
     </div>
     <div class="row">
-        <div class="col l12 col m6">
+        <div class="col s12 m12 l12">
 
             <div class="">
                 <div class=""></div>
 
 
-                <div class="">
+                <div class="row">
 
-                    <form>
+                    <form class="">
 
 
                         <div class="row">
-                            <div class="input-field col m6">
+                            <div class="input-field col m12 s12">
                                     <input type="email" class="form-control validate" id="inputEmail4">
                                     <label for="inputEmail4" data-error="Ingrese un email válido" style="width:30%">Email</label>
                                 </div>
-                            <div class="input-field col m6">
+                            <div class="input-field col m12 s12">
                                     <label for="inputPassword4">Password</label>
                                     <input type="password" class="form-control" id="inputPassword4">
                                 </div>
                             </div>
 
                         <div class="row">
-                            <div class="input-field col m6">
+                            <div class="input-field col m12 s12 l6">
                                 <label for="inputAddress">Address</label>
                                 <input type="text" class="form-control" id="inputAddress">
                             </div>
 
 
-                            <div class="input-field col m6">
+                            <div class="input-field col m12 s12 l6">
                                 <label for="inputAddress2">Address 2</label>
                                 <input type="text" class="form-control" id="inputAddress2">
                             </div>
                                 </div>
 
                         <div class="row">
-                            <div class="input-field col m6">
+                            <div class="input-field col m12 s12 l6">
                                     <label for="inputCity">City</label>
                                     <input type="text" class="form-control" id="inputCity">
                                 </div>
 
 
-                            <div class="input-field col m3">
+                            <div class="input-field col m12 s12 l6">
                                     <label for="inputZip">Zip</label>
                                     <input type="text" class="form-control" id="inputZip">
                                 </div>
 
 
+                            </div>
 
-                            <div class="input-field col m3">
-                                <label class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input">
-                                    <span class="custom-control-indicator"></span>
-                                    <span class="custom-control-description">Check this custom checkbox</span>
-                                </label>
+                        <div class="row">
+
+                            <div class="col m12 s12">
+                        <input type="checkbox" id="test5"/>
+                        <label for="test5">Red</label>
                             </div>
 
                         </div>
 
 
-                            <div>
+                        <div class="row">
+                            <div class="col m12 s12">
                                 <button type="submit" class="btn btn-primary">Aceptar</button>
                             </div>
 
@@ -443,7 +441,7 @@
     <script src="{{ asset('bundles/stgtheme/assets/popper.js/1.12.3/umd/popper.min.js') }}"></script>
 
     <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
 {% else %}
 
@@ -454,8 +452,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
             integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
             crossorigin="anonymous"></script>
+
     <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
 {% endif %}
 
@@ -465,7 +464,10 @@
 
         $(function () {
 
-            $(".dropdown-trigger").dropdown();
+
+            $(".button-collapse").sideNav();
+
+            $(".dropdown-button").dropdown();
 
         });
 
