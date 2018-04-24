@@ -111,7 +111,7 @@
 
         .cover {
             height: 360px;
-            background-image: url('{{ asset('bundles/stgtheme/img/bootstrap-top.jpg') }}');
+            background-image: url('{{ asset('bundles/stgtheme/img/materializecss-top.jpg') }}');
             background-size: 100% auto;
             background-repeat: no-repeat;
         }
@@ -225,6 +225,8 @@
         <li><a href="#!">two</a></li>
         <li class="divider"></li>
         <li><a href="#!">three</a></li>
+        <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
+        <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
     </ul>
     <nav class="fixed-top">
         <div class="nav-wrapper">
@@ -232,16 +234,37 @@
             <ul class="right hide-on-med-and-down">
                 <li><a href="sass.html">Sass</a></li>
                 <li><a href="badges.html">Components</a></li>
+                <li><a href="sass.html"><i class="material-icons left">search</i>Link with Left Icon</a></li>
+                <li><a href="badges.html"><i class="material-icons right">view_module</i>Link with Right Icon</a></li>
                 <!-- Dropdown Trigger -->
                 <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
             </ul>
 
 
-            <ul id="slide-out" class="side-nav">
+            {#<ul id="slide-out" class="side-nav">
                 <li><a href="#!">First Sidebar Link</a></li>
                 <li><a href="#!">Second Sidebar Link</a></li>
             </ul>
             <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+            #}
+
+            <ul id="slide-out" class="side-nav">
+                <li><div class="user-view">
+                        <div class="background">
+                            <img src="{{ asset('bundles/stgtheme/img/office.jpg') }}">
+                        </div>
+                        <a href="#!user"><img class="circle" src="{{ asset('bundles/stgtheme/img/person.png') }}"></a>
+                        <a href="#!name"><span class="white-text name">Name of person</span></a>
+                        <a href="#!email"><span class="white-text email">person@gmail.com</span></a>
+                    </div></li>
+                <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+                <li><a href="#!">Second Link</a></li>
+                <li><div class="divider"></div></li>
+                <li><a class="subheader">Subheader</a></li>
+                <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+            </ul>
+            <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+
 
 
 
@@ -253,9 +276,9 @@
 <main role="main" class="container">
 
 
-    <div class="row row-top">
+    <div class="row">
 
-        <div class="col-lg-12">
+        <div class="col s12 l12">
             <h1>Titulo de la aplicacion</h1>
 
             <p>Secretaría de tecnologías para la gestión. Miniterio de Gobierno y Reforma del Estado</p>
@@ -268,6 +291,7 @@
 
 
     <div class="row">
+        <div class="col s12">
     <nav>
         <div class="nav-wrapper">
             <div class="col s12">
@@ -279,50 +303,46 @@
     </nav>
 
     </div>
+    </div>
+
+    <div class="card-panel">
+        <h4 class="header2">Basic Form</h4>
+
     <div class="row">
-        <div class="col s12 m12 l12">
-
-            <div class="">
-                <div class=""></div>
-
+            <form class="col s12">
 
                 <div class="row">
-
-                    <form class="">
-
-
-                        <div class="row">
-                            <div class="input-field col m12 s12">
+                    <div class="input-field col m12 s12 l6">
+                        <i class="material-icons prefix">email</i>
                                     <input type="email" class="form-control validate" id="inputEmail4">
                                     <label for="inputEmail4" data-error="Ingrese un email válido" style="width:30%">Email</label>
                                 </div>
-                            <div class="input-field col m12 s12">
-                                    <label for="inputPassword4">Password</label>
+                    <div class="input-field col m12 s12 l6">
+                        <i class="material-icons prefix">account_circle</i>
                                     <input type="password" class="form-control" id="inputPassword4">
+                        <label for="inputPassword4">Password</label>
+
                                 </div>
                             </div>
 
                         <div class="row">
-                            <div class="input-field col m12 s12 l6">
-                                <label for="inputAddress">Address</label>
+                    <div class="input-field col m12 s12 l12">
+                        <i class="material-icons prefix">home</i>
                                 <input type="text" class="form-control" id="inputAddress">
-                            </div>
-
-
-                            <div class="input-field col m12 s12 l6">
-                                <label for="inputAddress2">Address 2</label>
-                                <input type="text" class="form-control" id="inputAddress2">
+                        <label for="inputAddress">Address</label>
                             </div>
                                 </div>
 
                         <div class="row">
                             <div class="input-field col m12 s12 l6">
+                        <i class="material-icons prefix">location_city</i>
                                     <label for="inputCity">City</label>
                                     <input type="text" class="form-control" id="inputCity">
                                 </div>
 
 
                             <div class="input-field col m12 s12 l6">
+                        <i class="material-icons prefix">location_on</i>
                                     <label for="inputZip">Zip</label>
                                     <input type="text" class="form-control" id="inputZip">
                                 </div>
@@ -331,10 +351,18 @@
                             </div>
 
                         <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">mode_edit</i>
+                        <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+                        <label for="icon_prefix2">First Name</label>
+                    </div>
+                </div>
+
+                <div class="row">
 
                             <div class="col m12 s12">
                         <input type="checkbox" id="test5"/>
-                        <label for="test5">Red</label>
+                        <label for="test5">Confirm</label>
                             </div>
 
                         </div>
@@ -344,14 +372,9 @@
                             <div class="col m12 s12">
                                 <button type="submit" class="btn btn-primary">Aceptar</button>
                             </div>
-
-
-                    </form>
                 </div>
 
-            </div>
-
-
+            </form>
         </div>
     </div>
 
