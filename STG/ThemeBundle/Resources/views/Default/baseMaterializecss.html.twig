@@ -118,7 +118,7 @@
         }
 
         .row-top {
-            padding-top: 80px;
+
         }
 
         .fixed-top {
@@ -163,6 +163,10 @@
             line-height: 1 !important;
             margin: 0 0px;
             padding-top: 10px;
+        }
+
+        .list-inline-item {
+            display: inline !important;
         }
 
         .list-inline-item a {
@@ -289,7 +293,7 @@
     <main role="main" class="container">
 
 
-        <div class="row row-top">
+        <div class="row">
 
             <div class="col s12 l12">
                 <h1>{{ datos_encabezado_title | default('Titulo de la aplicación') }}</h1>
@@ -527,6 +531,8 @@
 
     </script>
 
+
+{% endblock %}
 
 {% endblock %}
 
