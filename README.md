@@ -38,7 +38,7 @@ stg_theme:
 stg_theme:
     configuration:
         offline:  #true o false (Indica si lee los recursos de la intranet de gobierno o de servidores cdn externos).
-        materialize: true
+        materialize: #true o false (Indica si la vista demo del bundle renderiza la basada en materializecss o en bootstrap, son las vistas de ejemplo de maquetación)
 
 ```
 Funcionalidad:
