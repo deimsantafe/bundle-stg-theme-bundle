@@ -2489,6 +2489,9 @@ div.sociales a :hover {
   background-color: #0c6a74;
   opacity: 0.8; }
 
+blockquote {
+  border-left: 5px solid #108A97; }
+
 span.badge {
   min-width: 3rem;
   padding: 0 6px;
