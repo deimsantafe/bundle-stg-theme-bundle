@@ -17,11 +17,13 @@ class DefaultController extends Controller
 
         if ($this->getParameter('stg_theme.configuration.materialize') == false) {
             //renderizo vista bootstrap
-            return $this->render('STGThemeBundle:Default:base.html.twig');
+            return $this->render('@STGTheme/Default/base.html.twig');
         }
         else {
             //renderizo vista materializecss
-            return $this->render('STGThemeBundle:Default:baseMaterializecss.html.twig');
+            //return $this->render('STGThemeBundle::Default:baseMaterializecss.html.twig');
+
+            return $this->render('@STGTheme/Default/baseMaterializecss.html.twig');
         }
 
 
