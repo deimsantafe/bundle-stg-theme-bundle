@@ -188,6 +188,18 @@
             margin-right: 10px;
         }
 
+        .input-field div.error {
+            position: relative;
+            top: -1rem;
+            left: 0rem;
+            font-size: 0.8rem;
+            color: #ef5350;
+            -webkit-transform: translateY(0%);
+            -ms-transform: translateY(0%);
+            -o-transform: translateY(0%);
+            transform: translateY(0%);
+        }
+
         /**
         *responsive
         */
@@ -374,14 +386,16 @@
                 <h4 class="header2">Basic Form</h4>
 
                 <div class="row">
-                    <form class="col s12">
+                    <form id="formulario-demo-materializecss-stg" class="col s12">
 
                         <div class="row">
                             <div class="input-field col m12 s12 l6">
                                 <i class="material-icons prefix">email</i>
-                                <input type="email" class="form-control validate" id="inputEmail4">
-                                <label for="inputEmail4" data-error="Ingrese un email válido"
-                                       style="width:30%">Email</label>
+                                <label for="inputEmail" class="">E-Mail *</label>
+                                <input id="inputEmail" name="inputEmail" data-error=".errorInputEmail" type="email">
+                                <div class="errorInputEmail">
+                                </div>
+
                             </div>
                             <div class="input-field col m12 s12 l6">
                                 <i class="material-icons prefix">account_circle</i>
@@ -541,6 +555,13 @@
         <!-- Compiled and minified JavaScript -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/additional-methods.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/localization/messages_es_AR.min.js"></script>
+
+
+
+
 
     {% else %}
 
@@ -556,6 +577,13 @@
         <!-- Compiled and minified JavaScript -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/additional-methods.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/localization/messages_es_AR.min.js"></script>
+
+
+
+
     {% endif %}
 
 {% block ready %}
@@ -568,6 +596,36 @@
             $(".button-collapse").sideNav();
 
             $(".dropdown-button").dropdown();
+
+
+            //validate
+            $("#formulario-demo-materializecss-stg").validate({
+                rules: {
+                    inputEmail: {
+                        required: true,
+                        email: true
+                    },
+                },
+                //For custom messages
+                messages: {
+                    inputEmail: {
+                        required: "Este campo es requerido",
+                        email: "Ingrese un email correcto"
+                    }
+                },
+                errorElement: 'div',
+                errorPlacement: function (error, element) {
+
+                    var placement = $(element).data('error');
+
+                    if (placement) {
+                        $(placement).append(error)
+                    } else {
+                        error.insertAfter(element);
+                    }
+                }
+            });
+
 
         });
 
