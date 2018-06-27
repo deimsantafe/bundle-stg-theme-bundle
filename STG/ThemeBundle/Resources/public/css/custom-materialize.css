@@ -6100,7 +6100,9 @@ input[type=range]:focus::-ms-fill-upper {
   .tap-target-wrapper.open .tap-target-wave::after {
     visibility: visible;
     animation: pulse-animation 1s cubic-bezier(0.24, 0, 0.38, 1) infinite;
-    transition: opacity .3s, transform .3s, visibility 0s 1s; }
+    transition: opacity .3s,
+ transform .3s,
+ visibility 0s 1s; }
 
 .tap-target {
   position: absolute;
@@ -6135,7 +6137,9 @@ input[type=range]:focus::-ms-fill-upper {
     transition: transform .3s; }
   .tap-target-wave::after {
     visibility: hidden;
-    transition: opacity .3s, transform .3s, visibility 0s;
+    transition: opacity .3s,
+ transform .3s,
+ visibility 0s;
     z-index: -1; }
 
 .tap-target-origin {
@@ -6990,6 +6994,143 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
 
 nav .brand-logo {
   padding: 5px; }
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.footer-ul li > a {
+  color: #f4f4f4;
+  opacity: .5 !important;
+  font-size: 25px !important;
+}
+
+.cover {
+  height: 360px;
+  background-image: url('https://www.santafe.gob.ar/assets/app/stg-theme/img/materializecss-top.jpg');
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+.row-top {
+
+}
+
+.fixed-top {
+  background-repeat: repeat-x;
+  background-image: url("https://www.santafe.gob.ar/assets/standard/images/barra-header.png");
+  background-position: left bottom;
+  background-repeat: repeat-x;
+  background-size: 1367px 3px;
+  background-color: #e3e1e2;
+}
+
+.sociales {
+  padding: 15px;
+
+}
+
+.sociales > p > a {
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.marca {
+  padding: 15px;
+}
+
+.stg-logos-contenedor {
+  margin-top: 15px;
+}
+
+.stg-logos-contenedor .stg-logos a {
+  text-decoration: none;
+}
+
+.stg-logos a:hover {
+  opacity: 0.8;
+}
+
+.marca p {
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  color: #888888 !important;
+  line-height: 1 !important;
+  margin: 0 0px;
+  padding-top: 10px;
+}
+
+.list-inline-item {
+  display: inline !important;
+}
+
+.list-inline-item a {
+  text-decoration: none;
+  display: inline !important;
+}
+
+.custom-icon-middle > li > a > i {
+  vertical-align: middle;
+  padding-top: 3px;
+}
+
+.custom-dropdown-menu-right {
+  right: 0;
+  left: auto;
+}
+
+.custom-margin-right {
+  margin-right: 10px;
+}
+
+.input-field div.error {
+  position: relative;
+  top: -1rem;
+  left: 0rem;
+  font-size: 0.8rem;
+  color: #ef5350;
+  -webkit-transform: translateY(0%);
+  -ms-transform: translateY(0%);
+  -o-transform: translateY(0%);
+  transform: translateY(0%);
+}
+
+/**
+*responsive
+*/
+@media only screen and (max-width: 768px) {
+  .cover {
+    height: 0px !important;
+  }
+
+  .custom-dropdown-menu-right {
+    right: auto;
+    left: 0;
+  }
+
+  .footer-ul li > a {
+    color: #f4f4f4;
+    opacity: .5 !important;
+    font-size: 20px !important;
+  }
+
+  .custom-margin-right {
+    margin-right: auto;
+  }
+
+  .buttons-custom-responsive > .btn {
+    margin-bottom: 5px;
+    width: 100% !important;
+    float: none !important;
+  }
+
+}
 
 @media only screen and (max-width: 992px) {
   #sidenav-overlay {
