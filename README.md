@@ -58,6 +58,11 @@ Para utilizar el tema de materializecss:
 ```twig
 {% extends 'STGThemeBundle:Default:baseMaterializecss.html.twig' %}
 ```
+en Symfony >= 3.4 
+
+```yml
+{% extends '@STGTheme/Default/baseMaterializecss.html.twig' %}
+```
 
 Bloques para utilizar o redefinir con el tema de materializecss:
 
@@ -125,7 +130,11 @@ Para utilizar el tema de bootstrap:
 ```twig
 {% extends 'STGThemeBundle:Default:base.html.twig' %}
 ```
+en Symfony >= 3.4 
 
+```yml
+{% extends '@STGTheme/Default/base.html.twig' %}
+```
 
 Bloques para utilizar o redefinir con el tema de bootstrap:
 
