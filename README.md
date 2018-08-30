@@ -60,7 +60,7 @@ Para utilizar el tema de materializecss:
 ```
 en Symfony >= 3.4 
 
-```yml
+```twig
 {% extends '@STGTheme/Default/baseMaterializecss.html.twig' %}
 ```
 
@@ -132,7 +132,7 @@ Para utilizar el tema de bootstrap:
 ```
 en Symfony >= 3.4 
 
-```yml
+```twig
 {% extends '@STGTheme/Default/base.html.twig' %}
 ```
 
