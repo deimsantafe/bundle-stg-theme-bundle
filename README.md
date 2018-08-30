@@ -82,6 +82,11 @@ Funcionalidad:
 ```yml
 {% extends 'STGThemeBundle:Default:base.html.twig' %}
 ```
+en Symfony >= 3.4 
+
+```yml
+{% extends '@STGTheme/Default/base.html.twig' %}
+```
 
 Bloques para utilizar o redefinir:
 
