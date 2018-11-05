@@ -13,6 +13,12 @@ Para su instalación desde packagist.org: https://packagist.org/packages/stgbund
 
 Luego de instalada la dependencia van a poder utilizar el código gestionado via composer e incluido en el autoloader en su aplicación.
 
+- Luego instalar los assets
+
+```bash
+php app/console assets:install   (o bin/console para >= symfony 3.4)
+```
+
 - Agregar a app/AppKernel.php dentro del array de bundles:
 
 ```php
