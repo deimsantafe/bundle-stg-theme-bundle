@@ -1,42 +1,25 @@
 # bundle-stg-theme-bundle
 
-# Documentación actualizada en: https://github.com/deimsantafe/bundle-stg-theme-bundle/tree/2.x
+Esta nueva rama propone 2 temas customizados utilizando lo siguiente: 
 
-Bundle para Symfony (2.8 a 3.4) para utilizar el bootstrap-theme (tema con todo el framework de bootstrap incluido y con tema personalizado) via composer.
+Tema basado en materializecss (http://materializecss.com) para dar soporte completo a proyectos que requieran el diseño materialize definido por google.
+
+Tema basado en Bootstrap 4: para dar soporte completo a proyectos que requieran el diseño del framework bootstrap.
+
+
+Bundle para Symfony (2.8 a 3.4) para utilizar las plantillas de diseño propuestas por la Secretaría de Tecnologías para la Gestión del Gobierno de Santa Fe.
 
 Para su instalación desde packagist.org: https://packagist.org/packages/stgbundle/theme-bundle
 
-Para utilizar este bundle/paquete directamente agregar en el composer.json de tu proyecto lo siguiente, (ejemplo):
+Luego de instalada la dependencia van a poder utilizar el código gestionado via composer e incluido en el autoloader en su aplicación.
 
-```json
-"repositories": [
-
-    {
-        "type": "git",
-        "url":  "https://github.com/deimsantafe/bundle-stg-theme-bundle"
-    }
-],
-
-"minimum-stability" : "dev",
-"prefer-stable" : true
-
-]
-```
-
-Luego ejecutar: 
+- Luego instalar los assets
 
 ```bash
-php composer.phar require stgbundle/theme-bundle:1.0-dev
-```
-Luego instalar los assets
-
-```bash
-php app/console assets:install
+php app/console assets:install   (o bin/console para >= symfony 3.4)
 ```
 
-Luego van a poder utilizar el código gestionado via composer e incluido en el autoloader en su aplicación.
-
-- Una vez instalado, agregar a app/AppKernel.php dentro del array de bundles:
+- Agregar a app/AppKernel.php dentro del array de bundles:
 
 ```php
 $bundles = array(
@@ -45,7 +28,7 @@ new STG\ThemeBundle\STGThemeBundle(),
 )
 ```
 
-- Luego importar las rutas por default (app/config/routing.yml):
+- Para ver una vista demo del tema customizado importar las rutas por default (app/config/routing.yml):
 
 ```yml
 stg_theme:
@@ -58,14 +41,10 @@ stg_theme:
 
 ```yml
 
-# Twig Configuration
-twig:    
-    form:
-        resources: ['STGThemeBundle::bootstrap_4_custom_layout.html.twig'] #para renderizar los templates de formularios
-
 stg_theme:
     configuration:
-        offline:  #true o false (Indica si lee los recursos de la intranet o de servidores cdn externos).
+        offline:  #true o false (Indica si lee los recursos de la intranet de gobierno o de servidores cdn externos).
+        materialize: #true o false (Indica si la vista demo del bundle renderiza la basada en materializecss o en bootstrap, son las vistas de ejemplo de maquetación)
 
 ```
 Funcionalidad:
@@ -77,18 +56,97 @@ Funcionalidad:
 /web/app_dev.php/stgtheme/
 ```
 
-- Extender en su plantilla twig: 
+- Extender en su plantilla twig según el tema a utilizar: 
 
-```yml
+Para utilizar el tema de materializecss:
+---------------------------------------
+
+```twig
+{% extends 'STGThemeBundle:Default:baseMaterializecss.html.twig' %}
+```
+en Symfony >= 3.4 
+
+```twig
+{% extends '@STGTheme/Default/baseMaterializecss.html.twig' %}
+```
+
+Bloques para utilizar o redefinir con el tema de materializecss:
+
+```twig
+
+{% block css %}
+    {# contiene los assets de estilos de la plantilla #}
+{% endblock %}
+
+{% block nav %}
+
+     {% block navItemsDropdown %}
+     {% endblock %}
+     
+     {% block navBar %}
+        {% block navBarItems %}
+        {% endblock%}
+     {% endblock %}
+
+    {% block sideNav %}
+        {% block sideItems %}
+        {% endblock %}        
+    {% endblock %}
+     
+{% endblock %}
+
+{% block main %}
+    
+         {% block cover %}
+         
+            {# con la variable de template "datos_encabezado_imagen" se puede setear una imagen personalizada en este bloque #}
+         
+         {% endblock %}
+    
+         {% block breadcrumbItems %}                                 
+         {% endblock %}
+         
+         {% block content %}        
+         
+            {# cotenido principal #}
+         
+         {% endblock %}
+         
+         {% block backTop %}         
+         {% endblock %}
+    
+{% endblock %}
+
+{% block footer %}
+
+{% endblock %}
+
+{% block javascript %}
+
+    {# libreras de javascript #}
+
+{% endblock %}
+
+```
+
+
+Para utilizar el tema de bootstrap:
+-----------------------------------
+
+```twig
 {% extends 'STGThemeBundle:Default:base.html.twig' %}
 ```
 en Symfony >= 3.4 
 
+<<<<<<< HEAD
 ```yml
+=======
+```twig
+>>>>>>> 2.x
 {% extends '@STGTheme/Default/base.html.twig' %}
 ```
 
-Bloques para utilizar o redefinir:
+Bloques para utilizar o redefinir con el tema de bootstrap:
 
 ```twig
 
@@ -155,6 +213,7 @@ background-image: url('{{ datos_encabezado_imagen |  default(asset('bundles/stgt
 Dependencias:
 ============
 
+- Materializecss: http://archives.materializecss.com/0.100.2/
 - Bootstrap 4.
 - Jquery 3.
 - Material Icons: https://material.io/icons/ http://google.github.io/material-design-icons/

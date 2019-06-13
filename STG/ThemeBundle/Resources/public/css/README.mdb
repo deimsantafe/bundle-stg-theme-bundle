@@ -1,0 +1,11 @@
+custom.css
+==========
+Corresponde a archivo compilado sass, extendido de tema bootstrap y que contiene los estilos propios del Gobierno de la Provincia de Santa Fe. 
+
+custom-mdb.css
+==============
+Corresponde a archivo compilado sass, extendido de tema bootstrap Materialize y que contiene los estilos propios del Gobierno de la Provincia de Santa Fe.
+
+Referencias: 
+------------
+https://mdbootstrap.com/

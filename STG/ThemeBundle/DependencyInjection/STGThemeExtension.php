@@ -21,6 +21,7 @@ class STGThemeExtension extends Extension
         $config = $this->processConfiguration($configuration, $configs);
 
         $container->setParameter('stg_theme.configuration.offline', $config['configuration']['offline']);
+        $container->setParameter('stg_theme.configuration.materialize', $config['configuration']['materialize']);
 
     }
 

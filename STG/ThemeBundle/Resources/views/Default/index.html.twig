@@ -11,17 +11,16 @@
     {% if configuration_offline == true %}
 
         {# asset locales #}
+        <link rel="stylesheet" href="{{ asset('bundles/stgtheme/css/custom-materialize.css') }}">
 
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet"
-              href="{{ asset('bundles/stgtheme/assets/bootstrap/bootstrap-4.0.0-beta.2/css/bootstrap.min.css') }}"
-              type="text/css">
-
-        <!-- css custom theme -->
-        <link rel="stylesheet" href="{{ asset('bundles/stgtheme/css/custom.css') }}" type="text/css">
+        <!-- Compiled and minified CSS -->
+        {#<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">#}
 
         <!-- assets fonts -->
         <link rel="stylesheet" href="https://www.santafe.gob.ar/assets/standard/css/fonts.css" type="text/css">
+
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+              rel="stylesheet">
 
         <style>
 
@@ -59,14 +58,8 @@
     {% else %}
 
         {# assets con cdn externos #}
-
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
-              integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
-              crossorigin="anonymous">
-
-        <!-- css custom theme -->
-        <link rel="stylesheet" href="{{ asset('bundles/stgtheme/css/custom.css') }}" type="text/css">
+        <link rel="stylesheet" href="{{ asset('bundles/stgtheme/css/custom-materialize.css') }}">
+        {#<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">#}
 
         <!-- assets fonts -->
         <link rel="stylesheet" href="https://www.santafe.gob.ar/assets/standard/css/fonts.css" type="text/css">
@@ -78,15 +71,51 @@
 
     <style>
 
+        /*
+        html {
+            position: relative;
+            min-height: 100%;
+        }
+
+        body {
+            margin-bottom: 142px;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 142px;
+            top: auto;
+        }
+
+        */
+
+        body {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1 0 auto;
+        }
+
+        .footer-ul li > a {
+            color: #f4f4f4;
+            opacity: .5 !important;
+            font-size: 25px !important;
+        }
+
         .cover {
             height: 360px;
-            background-image: url('{{ asset('bundles/stgtheme/img/bootstrap-top.jpg') }}');
+            background-image: url('{{ asset('bundles/stgtheme/img/materializecss-top.jpg') }}');
             background-size: 100% auto;
             background-repeat: no-repeat;
         }
 
         .row-top {
-            padding-top: 80px;
+            /*padding-top: 80px;*/
         }
 
         .fixed-top {
@@ -100,6 +129,12 @@
 
         .sociales {
             padding: 15px;
+
+        }
+
+        .sociales > p > a {
+            font-weight: 700;
+            font-size: 13px;
         }
 
         .marca {
@@ -120,7 +155,6 @@
 
         .marca p {
             font-size: 13px !important;
-            font-family: 'Asap' !important;
             font-weight: 400 !important;
             color: #888888 !important;
             line-height: 1 !important;
@@ -128,8 +162,27 @@
             padding-top: 10px;
         }
 
+        .list-inline-item {
+            display: inline !important;
+        }
+
         .list-inline-item a {
             text-decoration: none;
+            display: inline !important;
+        }
+
+        .custom-icon-middle > li > a > i {
+            vertical-align: middle;
+            padding-top: 3px;
+        }
+
+        .custom-dropdown-menu-right {
+            right: 0;
+            left: auto;
+        }
+
+        .custom-margin-right {
+            margin-right: 10px;
         }
 
         /**
@@ -139,6 +192,22 @@
             .cover {
                 height: 0px !important;
             }
+
+            .custom-dropdown-menu-right {
+                right: auto;
+                left: 0;
+            }
+
+            .footer-ul li > a {
+                color: #f4f4f4;
+                opacity: .5 !important;
+                font-size: 20px !important;
+            }
+
+            .custom-margin-right {
+                margin-right: auto;
+            }
+
         }
 
 
@@ -148,38 +217,59 @@
 <body>
 
 
-<nav class="navbar navbar-expand-md navbar-light fixed-top">
-    <a class="navbar-brand" href="#"><img src="/assets/standard/images/gob-santafe.png"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
-        </ul>
-        <form class="form-inline mt-2 mt-md-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Buscar" aria-label="Search">
-            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>
-        </form>
-    </div>
-</nav>
+<div class="navbar-fixed">
+    <ul id="dropdown1" class="dropdown-content">
+        <li><a href="#!">one</a></li>
+        <li><a href="#!">two</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">three</a></li>
+        <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
+        <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
+    </ul>
+    <nav class="fixed-top">
+        <div class="nav-wrapper">
+            <a href="https://www.santafe.gob.ar" class="brand-logo"><img src="https://www.santafe.gob.ar/assets/standard/images/gob-santafe.png"></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="sass.html">Sass</a></li>
+                <li><a href="badges.html">Components</a></li>
+                <li><a href="sass.html"><i class="material-icons left">search</i>Link with Left Icon</a></li>
+                <li><a href="badges.html"><i class="material-icons right">view_module</i>Link with Right Icon</a></li>
+                <!-- Dropdown Trigger -->
+                <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Dropdown<i
+                                class="material-icons right">arrow_drop_down</i></a></li>
+            </ul>
+
+            <ul id="slide-out" class="side-nav">
+                <li>
+                    <div class="user-view">
+                        <div class="background">
+                            <img src="{{ asset('bundles/stgtheme/img/office.jpg') }}">
+                        </div>
+                        <a href="#!user"><img class="circle" src="{{ asset('bundles/stgtheme/img/person.png') }}"></a>
+                        <a href="#!name"><span class="white-text name">Name of person</span></a>
+                        <a href="#!email"><span class="white-text email">person@gmail.com</span></a>
+                    </div>
+                </li>
+                <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+                <li><a href="#!">Second Link</a></li>
+                <li>
+                    <div class="divider"></div>
+                </li>
+                <li><a class="subheader">Subheader</a></li>
+                <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+            </ul>
+            <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+</div>
 
 
 <main role="main" class="container">
 
 
-    <div class="row row-top">
+    <div class="row">
 
-        <div class="col-lg-12">
+        <div class="col s12 l12">
             <h1>Titulo de la aplicacion</h1>
 
             <p>Secretaría de tecnologías para la gestión. Miniterio de Gobierno y Reforma del Estado</p>
@@ -192,77 +282,96 @@
 
 
     <div class="row">
-        <nav aria-label="breadcrumb" role="navigation">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item"><a href="#">Library</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Data</li>
-            </ol>
-        </nav>
-    </div>
-
-    <div class="row">
-        <div class="col-lg-12 col-md-6">
-
-            <form>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="inputEmail4">Email</label>
-                        <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="inputPassword4">Password</label>
-                        <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+        <div class="col s12">
+            <nav>
+                <div class="nav-wrapper">
+                    <div class="col s12">
+                        <a href="#!" class="breadcrumb">First</a>
+                        <a href="#!" class="breadcrumb">Second</a>
+                        <a href="#!" class="breadcrumb">Third</a>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="inputAddress">Address</label>
-                    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-                </div>
-                <div class="form-group">
-                    <label for="inputAddress2">Address 2</label>
-                    <input type="text" class="form-control" id="inputAddress2"
-                           placeholder="Apartment, studio, or floor">
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="inputCity">City</label>
-                        <input type="text" class="form-control" id="inputCity">
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label for="inputState">State</label>
-                        <select id="inputState" class="form-control">
-                            <option selected>Choose...</option>
-                            <option>...</option>
-                        </select>
-                    </div>
-                    <div class="form-group col-md-2">
-                        <label for="inputZip">Zip</label>
-                        <input type="text" class="form-control" id="inputZip">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <input class="form-check-input" type="checkbox"> Check me out
-                        </label>
-                    </div>
-                </div>
-
-                <div>
-                    <button type="submit" class="btn btn-primary">Aceptar</button>
-                </div>
-
-
-            </form>
-
+            </nav>
 
         </div>
     </div>
 
+    <div class="card-panel">
+        <h4 class="header2">Basic Form</h4>
+
+        <div class="row">
+            <form class="col s12">
+
+                <div class="row">
+                    <div class="input-field col m12 s12 l6">
+                        <i class="material-icons prefix">email</i>
+                        <input type="email" class="form-control validate" id="inputEmail4">
+                        <label for="inputEmail4" data-error="Ingrese un email válido" style="width:30%">Email</label>
+                    </div>
+                    <div class="input-field col m12 s12 l6">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input type="password" class="form-control" id="inputPassword4">
+                        <label for="inputPassword4">Password</label>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col m12 s12 l12">
+                        <i class="material-icons prefix">home</i>
+                        <input type="text" class="form-control" id="inputAddress">
+                        <label for="inputAddress">Address</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col m12 s12 l6">
+                        <i class="material-icons prefix">location_city</i>
+                        <label for="inputCity">City</label>
+                        <input type="text" class="form-control" id="inputCity">
+                    </div>
+
+
+                    <div class="input-field col m12 s12 l6">
+                        <i class="material-icons prefix">location_on</i>
+                        <label for="inputZip">Zip</label>
+                        <input type="text" class="form-control" id="inputZip">
+                    </div>
+
+
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">mode_edit</i>
+                        <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+                        <label for="icon_prefix2">First Name</label>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col m12 s12">
+                        <input type="checkbox" id="test5"/>
+                        <label for="test5">Confirm</label>
+                    </div>
+
+                </div>
+
+
+                <div class="row">
+                    <div class="col m12 s12">
+                        <button type="submit" class="btn btn-primary">Aceptar</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
     <div class="row">
-        <div class="col-12">
-            <p class="float-right">
+        <div class="col m12">
+            <p class="right-align">
                 <a href="#"><i class="material-icons">keyboard_arrow_up</i></a>
             </p>
         </div>
@@ -274,11 +383,12 @@
 
 <div class="clearfix"><br></div>
 
-<footer class="text-muted">
+
+<footer class="page-footer footer text-muted">
     <div class="container-fluid">
         <div class="row">
 
-            <div class="offset-md-2 col-md-3">
+            <div class="offset-m2 col m3">
                 <div class="sociales">
                     <p><a href="/index.php/web/content/view/full/117678">RSS / SUSCRIPCIÓN A NOTICIAS</a></p>
                     <ul class="list-inline footer-ul">
@@ -309,7 +419,7 @@
 
             </div>
 
-            <div class="col-md-4">
+            <div class="col m3">
 
                 <div class="marca">
                     <img src="https://www.santafe.gob.ar/assets/app/portal/imgs/marca-footer.png" alt="Santa Fe">
@@ -321,7 +431,7 @@
 
             </div>
 
-            <div class="col-md-2">
+            <div class="col m3">
 
                 <div class="stg-logos-contenedor">
                     <div class="stg-logos">
@@ -340,28 +450,45 @@
 {% if configuration_offline == true %}
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-
-    <script src="{{ asset('bundles/stgtheme/assets/jquery/jquery-3.2.1.slim/jquery.slim.min.js') }}"></script>
+    <script src="{{ asset('bundles/stgtheme/assets/jquery/jquery-3.2.1.slim/jquery-3.2.1.min.js') }}"></script>
 
     <script src="{{ asset('bundles/stgtheme/assets/popper.js/1.12.3/umd/popper.min.js') }}"></script>
 
-    <script src="{{ asset('bundles/stgtheme/assets/bootstrap/bootstrap-4.0.0-beta.2/js/bootstrap.min.js') }}"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
 {% else %}
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
             crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
             integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
             crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
-            integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
-            crossorigin="anonymous"></script>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
 {% endif %}
 
+{% block ready %}
+
+    <script>
+
+        $(function () {
+
+
+            $(".button-collapse").sideNav();
+
+            $(".dropdown-button").dropdown();
+
+        });
+
+    </script>
+
+
+{% endblock %}
 
 </body>
 </html>

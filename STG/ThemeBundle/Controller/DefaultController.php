@@ -12,6 +12,20 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('STGThemeBundle:Default:index.html.twig');
+        //dump('stg_theme.configuration.materialize: '.$this->getParameter('stg_theme.configuration.materialize'));
+
+
+        if ($this->getParameter('stg_theme.configuration.materialize') == false) {
+            //renderizo vista bootstrap
+            return $this->render('@STGTheme/Default/base.html.twig');
+        }
+        else {
+            //renderizo vista materializecss
+            //return $this->render('STGThemeBundle::Default:baseMaterializecss.html.twig');
+
+            return $this->render('@STGTheme/Default/baseMaterializecss.html.twig');
+        }
+
+
     }
 }
