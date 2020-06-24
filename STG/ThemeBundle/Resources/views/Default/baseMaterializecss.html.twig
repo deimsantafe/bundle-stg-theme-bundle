@@ -12,7 +12,7 @@
         {% if configuration_offline == true %}
 
             {# asset locales #}
-            <link rel="stylesheet" href="{{ asset('bundles/stgtheme/css/custom-materialize.css') }}">
+            <link rel="stylesheet" href="{{ asset('bundles/stgtheme/css/custom-materialize.css' ~ '?version=012020') }}">
 
             <!-- assets fonts -->
             <link rel="stylesheet" href="https://www.santafe.gob.ar/assets/standard/css/fonts.css" type="text/css">
@@ -55,7 +55,7 @@
         {% else %}
 
             {# assets con cdn externos #}
-            <link rel="stylesheet" href="{{ asset('bundles/stgtheme/css/custom-materialize.css') }}">
+            <link rel="stylesheet" href="{{ asset('bundles/stgtheme/css/custom-materialize.css' ~ '?version=012020') }}">
 
             <!-- assets fonts -->
             <link rel="stylesheet" href="https://www.santafe.gob.ar/assets/standard/css/fonts.css" type="text/css">
@@ -319,67 +319,54 @@
 <div class="clearfix"><br></div>
 
 {% block footer %}
-    <footer class="page-footer footer text-muted">
-        <div class="container-fluid">
-            <div class="row">
+     <footer class="page-footer footer text-muted">
+	<div class="container">
+		<div class="row">
 
-                <div class="offset-m2 col m3">
-                    <div class="sociales">
-                        <p><a href="/index.php/web/content/view/full/117678">RSS / SUSCRIPCIÓN A NOTICIAS</a></p>
-                        <ul class="list-inline footer-ul">
-                            <li class="list-inline-item"><a target="_blank" href="http://www.twitter.com/GobSantaFe"><i
-                                            class="icon-footertwitter"></i></a></li>
-                            <li class="list-inline-item"><a target="_blank" href="http://www.facebook.com/GobSantaFe"><i
-                                            class="icon-footerfacebook"></i></a>
-                            </li>
-                            <li class="list-inline-item"><a target="_blank" href="http://gplus.to/GobSantaFe"><i
-                                            class="icon-footerg"></i></a></li>
-                            <li class="list-inline-item"><a target="_blank" href="http://gobsantafe.tumblr.com/"><i
-                                            class="icon-footertumblr"></i></a>
-                            </li>
-                            <li class="list-inline-item"><a target="_blank" href="http://www.youtube.com/GobSantaFe"><i
-                                            class="icon-footeryoutube"></i></a></li>
-                            <li class="list-inline-item"><a target="_blank" href="http://instagram.com/gobsantafe"><i
-                                            class="icon-footerinstagram"></i></a></li>
-                            <li class="list-inline-item"><a target="_blank" href="https://es.foursquare.com/gobsantafe"><i
-                                            class="icon-footerfoursquare"></i></a></li>
-                            <li class="list-inline-item"><a target="_blank" href="https://storify.com/GobSantaFe"><i
-                                            class="icon-footerstorify"></i></a>
-                            </li>
-                            <li class="list-inline-item"><a target="_blank"
-                                                            href="http://www.linkedin.com/company/gobierno-de-la-provincia-de-santa-fe"><i
-                                            class="icon-footerlinkedin"></i></a></li>
-                        </ul>
-                    </div>
+			<div class="col s12 col m4">
+				<div class="sociales">
+					<p>
+						<a href="//www.santafe.gob.ar/index.php/web/content/view/full/117678">RSS / SUSCRIPCIÓN A NOTICIAS</a>
+					</p>
+					<ul class="list-inline footer-ul">
+						<li class="list-inline-item">
+							<a target="_blank" href="http://www.twitter.com/GobSantaFe">
+								<i class="icon-footertwitter"></i>
+							</a>
+						</li>
+						<li class="list-inline-item">
+							<a target="_blank" href="http://www.facebook.com/GobSantaFe">
+								<i class="icon-footerfacebook"></i>
+							</a>
+						</li>
+						<li class="list-inline-item">
+							<a target="_blank" href="http://www.youtube.com/GobSantaFe">
+								<i class="icon-footeryoutube"></i>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col s12 col m4">
+				<div class="sociales" style="text-align:center">					
+					<img src="//www.santafe.gob.ar/assets/standard/images/marca-footer.png" alt="Santa Fe">
+				</div>
+			</div>
+			<div class="col s12 col m4">
+				<div class="sociales marca">
+					<p>Atención telefónica: 0800-777-0801
+					</p>
+					<p>Lunes a viernes de 8 a 18 hs
+					</p>
+					<p>
+						<span class="cc">c</span>
+						Atribución-CompartirIgual 2.5 Argentina</p>
+				</div>
+			</div>
+		</div>
 
-                </div>
-
-                <div class="col m3">
-
-                    <div class="marca">
-                        <img src="https://www.santafe.gob.ar/assets/app/portal/imgs/marca-footer.png" alt="Santa Fe">
-                        <p>Atención telefónica: 0800-777-0801 </p>
-                        <p>Lunes a viernes de 8 a 18 hs </p>
-                        <p><span class="cc">c</span> Atribución-CompartirIgual 2.5 Argentina</p>
-                    </div>
-
-
-                </div>
-
-                <div class="col m3">
-
-                    <div class="stg-logos-contenedor">
-                        <div class="stg-logos">
-                            <a href="https://www.santafe.gob.ar/tecnologias" target="_blank"><span
-                                        class="stg-logos-logo-tec-stg"></span></a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-    </footer>
+	</div>
+</footer>
 {% endblock %}
 
 {% block javascript %}
