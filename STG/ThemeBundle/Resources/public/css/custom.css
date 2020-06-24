@@ -6030,7 +6030,9 @@ a.text-dark:hover, a.text-dark:focus {
   background: #e4e5e6 !important; }
 
 .container-fluid {
-  background: #e4e5e6 !important; }
+  /* ajuste 2020*/
+  /* background: #e4e5e6 !important; */
+   }
 
 div.sociales a {
   color: #868e96 !important; }
@@ -6054,8 +6056,24 @@ body {
   width: 100%;
   height: 142px;
   top: auto;
+  padding-top: 20px;
+  font-size: 13px;
+  line-height: 16px;
+  line-height: 16px;
+  border-top: 1px solid rgba(192,192,192,1);
 }
-
+.footer p {
+    margin-bottom: 0px;
+}
+.contact-data-footer {
+    text-align: right;
+    padding-right: 40px;
+}
+.footer .row {
+    padding-left: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
 .footer-ul li > a {
   color: #f4f4f4;
   opacity: .5 !important;
@@ -6083,7 +6101,7 @@ body {
 }
 
 .sociales {
-  padding: 15px;
+  /* padding: 15px; */
 
 }
 
@@ -6156,6 +6174,14 @@ body {
 
   .custom-margin-right {
     margin-right: auto;
+  }
+
+  .contact-data-footer{
+    text-align: center;
+    padding-right: 0px;
+  }
+  .footer{
+    text-align: center;
   }
 
 }
