@@ -6062,6 +6062,9 @@ body {
   line-height: 16px;
   border-top: 1px solid rgba(192,192,192,1);
 }
+.container-footer {
+  background:  #fff !important;
+}
 .footer p {
     margin-bottom: 0px;
 }
