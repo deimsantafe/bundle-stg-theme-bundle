@@ -2183,7 +2183,10 @@ ul.staggered-list li {
   .center-on-small-only {
     text-align: center; } }
 
-
+.page-footer {
+  padding-top: 20px;
+  color: #fff;
+  background-color: #ee6e73; }
   .page-footer .footer-copyright {
     overflow: hidden;
     min-height: 50px;
@@ -6097,9 +6100,7 @@ input[type=range]:focus::-ms-fill-upper {
   .tap-target-wrapper.open .tap-target-wave::after {
     visibility: visible;
     animation: pulse-animation 1s cubic-bezier(0.24, 0, 0.38, 1) infinite;
-    transition: opacity .3s,
- transform .3s,
- visibility 0s 1s; }
+    transition: opacity .3s, transform .3s, visibility 0s 1s; }
 
 .tap-target {
   position: absolute;
@@ -6134,9 +6135,7 @@ input[type=range]:focus::-ms-fill-upper {
     transition: transform .3s; }
   .tap-target-wave::after {
     visibility: hidden;
-    transition: opacity .3s,
- transform .3s,
- visibility 0s;
+    transition: opacity .3s, transform .3s, visibility 0s;
     z-index: -1; }
 
 .tap-target-origin {
@@ -6985,8 +6984,7 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   padding-top: 20px;
   color: #fff;
   background-color: #fff;
-  border-top: 1px solid rgba(192,192,192,1);
- }
+  border-top: 1px solid silver; }
 
 .row-top {
   background: #e4e5e6 !important; }
@@ -6997,33 +6995,24 @@ nav .brand-logo {
 body {
   display: flex;
   min-height: 100vh;
-  flex-direction: column;
-}
+  flex-direction: column; }
 
 main {
-  flex: 1 0 auto;
-}
+  flex: 1 0 auto; }
 
 .footer-ul {
-  margin-top: 0px;
-}
+  margin-top: 0px; }
 
 .footer-ul li > a {
   color: #f4f4f4;
   opacity: .5 !important;
-  font-size: 25px !important;
-}
+  font-size: 25px !important; }
 
 .cover {
   height: 360px;
-  background-image: url('https://www.santafe.gob.ar/assets/app/stg-theme/img/materializecss-top.jpg');
+  background-image: url("https://www.santafe.gob.ar/assets/app/stg-theme/img/materializecss-top.jpg");
   background-size: 100% auto;
-  background-repeat: no-repeat;
-}
-
-.row-top {
-
-}
+  background-repeat: no-repeat; }
 
 .fixed-top {
   background-repeat: repeat-x;
@@ -7031,39 +7020,30 @@ main {
   background-position: left bottom;
   background-repeat: repeat-x;
   background-size: 1367px 3px;
-  background-color: #e3e1e2;
-}
+  background-color: #e3e1e2; }
 
 .sociales {
-  /* padding: 15px; */
-
-}
+  /* padding: 15px; */ }
 
 .sociales > p {
   margin-top: 0px;
-  margin-bottom: 0px;
-}
+  margin-bottom: 0px; }
 
 .sociales > p > a {
   font-weight: 700;
-  font-size: 13px;
-}
+  font-size: 13px; }
 
 .stg-logos-contenedor {
-  margin-top: 15px;
-}
+  margin-top: 15px; }
 
 .stg-logos-contenedor .stg-logos a {
-  text-decoration: none;
-}
+  text-decoration: none; }
 
 .stg-logos a:hover {
-  opacity: 0.8;
-}
+  opacity: 0.8; }
 
 .marca {
-  text-align: right;
-}
+  text-align: right; }
 
 .marca p {
   font-size: 13px !important;
@@ -7071,31 +7051,25 @@ main {
   color: #888888 !important;
   line-height: 1 !important;
   margin: 0px 0px;
-  padding-top: 5px;  
-}
+  padding-top: 5px; }
 
 .list-inline-item {
-  display: inline !important;
-}
+  display: inline !important; }
 
 .list-inline-item a {
   text-decoration: none;
-  display: inline !important;
-}
+  display: inline !important; }
 
 .custom-icon-middle > li > a > i {
   vertical-align: middle;
-  padding-top: 3px;
-}
+  padding-top: 3px; }
 
 .custom-dropdown-menu-right {
   right: 0;
-  left: auto;
-}
+  left: auto; }
 
 .custom-margin-right {
-  margin-right: 10px;
-}
+  margin-right: 10px; }
 
 .input-field div.error {
   position: relative;
@@ -7106,43 +7080,29 @@ main {
   -webkit-transform: translateY(0%);
   -ms-transform: translateY(0%);
   -o-transform: translateY(0%);
-  transform: translateY(0%);
-}
+  transform: translateY(0%); }
 
 /**
 *responsive
 */
 @media only screen and (max-width: 768px) {
   .cover {
-    height: 0px !important;
-  }
-
+    height: 0px !important; }
   .custom-dropdown-menu-right {
     right: auto;
-    left: 0;
-  }
-
+    left: 0; }
   .footer-ul li > a {
     color: #f4f4f4;
     opacity: .5 !important;
-    font-size: 20px !important;
-  }
-
+    font-size: 20px !important; }
   .custom-margin-right {
-    margin-right: auto;
-  }
-
-  .buttons-custom-responsive > .btn {
+    margin-right: auto; }
+  .buttons-custom-responsive > .btn, .buttons-custom-responsive > .btn-large {
     margin-bottom: 5px;
     width: 100% !important;
-    float: none !important;
-  }
-
-  .page-footer , .marca{
-    text-align: center;
-  }
-
-}
+    float: none !important; }
+  .page-footer, .marca {
+    text-align: center; } }
 
 @media only screen and (max-width: 992px) {
   #sidenav-overlay {
