@@ -84,7 +84,7 @@
             </ul>
         {% endblock %}
 
-        <nav class="fixed-top">
+        <nav>
             <div class="nav-wrapper">
 
                 {% block navBar %}
@@ -99,15 +99,20 @@
                             </li>
                             <li><a href="#"><i class="material-icons right">view_module</i>Link with Right
                                     Icon</a></li>
-                            <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Dropdown<i
+                            <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i
                                             class="material-icons right">arrow_drop_down</i></a></li>
                         {% endblock %}
 
                     </ul>
                 {% endblock %}
+                <a href="#" data-target="slide-out" class="sidenav-trigger hide-on-large-only"><i class="material-icons">menu</i></a>
+           </div>
 
+        </nav>
+
+    </div>
                 {% block sideNav %}
-                    <ul id="slide-out" class="side-nav">
+                    <ul id="slide-out" class="sidenav">
                         {% block sideItems %}
                             <li>
                                 <div class="user-view">
@@ -129,15 +134,10 @@
                             <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
                         {% endblock %}
                     </ul>
-                    <a href="#" data-activates="slide-out" class="button-collapse"><i
-                                class="material-icons">menu</i></a>
+                    
                 {% endblock %}
 
-            </div>
-
-        </nav>
-
-    </div>
+            
 {% endblock %}
 
 {% block main %}
@@ -280,8 +280,10 @@
                         <div class="row">
 
                             <div class="col m12 s12">
+                                <label>
                                 <input type="checkbox" id="test5"/>
-                                <label for="test5">Confirm</label>
+                                <span>Confirm</span>
+                                </label>
                             </div>
 
                         </div>
@@ -372,40 +374,24 @@
 {% block javascript %}
 
     {% if configuration_offline == true %}
-
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-
-        <script src="{{ asset('bundles/stgtheme/assets/jquery/jquery-3.2.1.slim/jquery-3.2.1.min.js') }}"></script>
-
-        <script src="{{ asset('bundles/stgtheme/assets/popper.js/1.12.3/umd/popper.min.js') }}"></script>
-
         <!-- Compiled and minified JavaScript -->
-        <script src="https://www.santafe.gob.ar/assets/materialize-css/materialize-css-0.100.2/js/materialize.min.js"></script>
+        <script src="{{ asset('bundles/stgtheme/assets/jquery/jquery-3.5.1.slim/jquery-3.5.1.min.js') }}"></script>
+        <!-- materialize -->
+        <script src="{{ asset('bundles/stgtheme/assets/materialize/1.0.0/materialize.min.js') }}"></script>
         <!-- validation -->
-        <script src="{{ asset('bundles/stgtheme/assets/jquery-validate/1.17.0/jquery.validate.min.js') }}"></script>
-        <script src="{{ asset('bundles/stgtheme/assets/jquery-validate/1.17.0/additional-methods.js') }}"></script>
-        <script src="{{ asset('bundles/stgtheme/assets/jquery-validate/1.17.0/localization/messages_es_AR.js') }}"></script>
+        <script src="{{ asset('bundles/stgtheme/assets/jquery-validate/1.19.2/jquery.validate.min.js') }}"></script>
+        <script src="{{ asset('bundles/stgtheme/assets/jquery-validate/1.19.2/additional-methods.min.js') }}"></script>
+        <script src="{{ asset('bundles/stgtheme/assets/jquery-validate/1.19.2/localization/messages_es_AR.min.js') }}"></script>
 
     {% else %}
-
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js"
-                integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-                crossorigin="anonymous"></script>
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
-                integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
-                crossorigin="anonymous"></script>
-
         <!-- Compiled and minified JavaScript -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/additional-methods.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/localization/messages_es_AR.min.js"></script>
-
-
-
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <!-- materialize -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <!-- validation -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/additional-methods.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/localization/messages_es_AR.min.js"></script>
 
     {% endif %}
 
@@ -415,11 +401,10 @@
 
         $(function () {
 
-
-            $(".button-collapse").sideNav();
-
-            $(".dropdown-button").dropdown();
-
+            M.AutoInit();
+            $(".sidenav").sidenav();
+            $(".dropdown-trigger").dropdown();
+            
 
             //validate
             $("#formulario-demo-materializecss-stg").validate({
