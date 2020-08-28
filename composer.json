@@ -1,7 +1,7 @@
 {
     "name": "stgbundle/theme-bundle",
-    "type": "bundle",
-    "description": "Bundle de Symfony creado por la Secretaría de Tecnologías para la Gestión del Ministerio de Gobierno y Reforma del Estado de la Provincia de Santa Fe",
+    "type": "symfony-bundle",
+    "description": "Bundle de Symfony creado por la Secretaría de Tecnologías para la Gestión del Ministerio de Gestión Pública de la Provincia de Santa Fe",
     "keywords": [
         "bundle",
         "materializecss",
@@ -26,7 +26,8 @@
         "wiki": "https://github.com/deimsantafe/bundle-stg-theme-bundle/wiki"
     },
     "require": {
-        "php": ">=5.3.2"
+        "php": ">=7.3.1",
+        "symfony/framework-bundle": "~4.4"
     },
     "autoload": {
         "psr-0": { "STG\\ThemeBundle\\": "" }

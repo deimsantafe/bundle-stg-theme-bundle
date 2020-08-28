@@ -2,10 +2,12 @@
 
 namespace STG\ThemeBundle\Twig;
 
+use Twig\Extension\AbstractExtension;
+use Twig\Extension\GlobalsInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 
-class STGThemeExtension extends \Twig_Extension implements \Twig_Extension_GlobalsInterface
+class STGThemeExtension extends AbstractExtension implements GlobalsInterface
 {
     protected $container;
 
@@ -14,7 +16,7 @@ class STGThemeExtension extends \Twig_Extension implements \Twig_Extension_Globa
         $this->container = $container;
     }
 
-    public function getGlobals()
+    public function getGlobals():array
     {
         return array(
             'configuration_offline' => $this->container->getParameter('stg_theme.configuration.offline'),

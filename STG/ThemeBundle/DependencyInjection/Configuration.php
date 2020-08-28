@@ -11,24 +11,20 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         // TODO: Implement getConfigTreeBuilder() method.
-        $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('stg_theme');
+        $treeBuilder = new TreeBuilder('stg_theme');
 
-        $rootNode
+        $treeBuilder->getRootNode()
             ->children()
                 ->arrayNode('configuration')
                     ->isRequired()
                     ->info('Complete los parametros requeridos')
                     ->children()
-                        ->scalarNode('offline')
-                        ->end()
-                        ->scalarNode('materialize')
-                        ->end()    
+                        ->scalarNode('offline')->end()
+                        ->scalarNode('materialize')->end()    
             ->end()
                 ->end()
                     ->end();
 
         return $treeBuilder;
     }
-
 }
