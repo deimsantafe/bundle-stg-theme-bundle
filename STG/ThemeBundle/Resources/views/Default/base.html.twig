@@ -1,11 +1,14 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>{{ datos_encabezado_title | default('Titulo de la aplicación') }}</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="https://www.santafe.gob.ar/assets/standard/images/favicon.ico">
+    <!-- end Required meta tags -->
+    {% block head %}
+        <title>{{ datos_encabezado_title | default('Titulo de la aplicación') }}</title>    
+    {% endblock %}  
 
     {% block css %}
 
